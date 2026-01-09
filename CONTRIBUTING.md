@@ -1,64 +1,39 @@
 # Contributing
 
-Contributions of all kinds are welcome here, and they are greatly appreciated!
-Every little bit helps, and credit will always be given.
+Contributions of all kinds are welcome here, and they are greatly appreciated! Every little bit helps, and credit will always be given.
 
-## Example Contributions
+## Contributions
 
-You can contribute in many ways, for example:
-
-* [Report bugs](#report-bugs)
-* [Fix Bugs](#fix-bugs)
-* [Implement Features](#implement-features)
-* [Write Documentation](#write-documentation)
-* [Submit Feedback](#submit-feedback)
+You can contribute in many ways:
 
 ### Report Bugs
 
 Report bugs at https://github.com/suryashch/ridge_remake/issues.
 
-**If you are reporting a bug, please follow the template guidelines. The more
-detailed your report, the easier and thus faster we can help you.**
+**If you are reporting a bug, please follow the template guidelines. The more detailed your report, the easier and thus faster we can help you.**
 
 ### Fix Bugs
 
-Look through the GitHub issues for bugs. Anything labelled with `bug` and
-`help wanted` is open to whoever wants to implement it. When you decide to work on such
-an issue, please assign yourself to it and add a comment that you'll be working on that,
-too. If you see another issue without the `help wanted` label, just post a comment, the
-maintainers are usually happy for any support that they can get.
+Look through the GitHub issues for bugs. Anything labelled with `bug` and `help wanted` is open to whoever wants to implement it. Please assign yourself to the issue and add a comment stating you are working on it.
 
 ### Implement Features
 
-Look through the GitHub issues for features. Anything labelled with
-`enhancement` and `help wanted` is open to whoever wants to implement it. As
-for [fixing bugs](#fix-bugs), please assign yourself to the issue and add a comment that
-you'll be working on that, too. If another enhancement catches your fancy, but it
-doesn't have the `help wanted` label, just post a comment, the maintainers are usually
-happy for any support that they can get.
+Look through the GitHub issues for features. Anything labelled with `enhancement` and `help wanted` is open to whoever wants to implement it. Please assign yourself to the issue and add a comment stating you are working on it.
 
 ### Write Documentation
 
-ridge_remake could always use more documentation, whether as
-part of the official documentation, in docstrings, or even on the web in blog
-posts, articles, and such. Just
-[open an issue](https://github.com/suryashch/ridge_remake/issues)
-to let us know what you will be working on so that we can provide you with guidance.
+`ridge_remake` could always use more documentation, whether as part of the official documentation, in docstrings, or even on the web in blog posts. Just [open an issue](https://github.com/suryashch/ridge_remake/issues) to let us know what you will be working on so that we can provide guidance.
 
 ### Submit Feedback
 
-The best way to send feedback is to file an issue at
-https://github.com/suryashch/ridge_remake/issues. If your feedback fits the format of one of
-the issue templates, please use that. Remember that this is a volunteer-driven
-project and everybody has limited time.
+The best way to send feedback is to file an issue at https://github.com/suryashch/ridge_remake/issues.
 
 ## Get Started!
 
 Ready to contribute? Here's how to set up ridge_remake for
 local development.
 
-1. Fork the https://github.com/suryashch/ridge_remake
-   repository on GitHub.
+1. Fork the https://github.com/suryashch/ridge_remake repository on GitHub.
 2. Clone your fork locally (*if you want to work locally*)
 
     ```shell
@@ -67,7 +42,7 @@ local development.
 
 3. [Install hatch](https://hatch.pypa.io/latest/install/).
 
-4. Create a branch for local development using the default branch (typically `main`) as a starting point. Use `fix` or `feat` as a prefix for your branch name.
+4. Create a Branch Create a branch for local development using main as a starting point.
 
     ```shell
     git checkout main
@@ -76,15 +51,13 @@ local development.
 
     Now you can make your changes locally.
 
-5. When you're done making changes, apply the quality assurance tools and check
-   that your changes pass our test suite. This is all included with tox
+5. Test Your Changes When you're done making changes, use hatch to run the test suite and quality assurance tools.
 
     ```shell
     hatch run test:run
     ```
 
-6. Commit your changes and push your branch to GitHub. Please use [semantic
-   commit messages](https://www.conventionalcommits.org/).
+6. Commit your changes and push your branch to GitHub. Please use [semantic commit messages](https://www.conventionalcommits.org/).
 
     ```shell
     git add .
@@ -92,8 +65,7 @@ local development.
     git push -u origin fix-name-of-your-bugfix
     ```
 
-7. Open the link displayed in the message when pushing your new branch in order
-   to submit a pull request.
+7. Open the link displayed in the message when pushing your new branch in order to submit a pull request.
 
 ### Pull Request Guidelines
 
@@ -104,3 +76,7 @@ Before you submit a pull request, check that it meets these guidelines:
    new functionality into a function with a docstring.
 3. Your pull request will automatically be checked by the full test suite.
    It needs to pass all of them before it can be considered for merging.
+
+## Code of conduct
+
+By contributing to this project, you are agreeing to abide by our Code of Conduct, which can be found here [Code of Conduct](https://github.com/UBC-MDS/DSCI_524_group24/blob/main/CODE_OF_CONDUCT.md).
