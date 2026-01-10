@@ -8,7 +8,7 @@ You can contribute in many ways:
 
 ### Report Bugs
 
-Report bugs at [https://github.com/suryashch/ridge_remake/issues](https://github.com/UBC-MDS/DSCI_524_group24/issues).
+Report bugs by [filing an issue](https://github.com/UBC-MDS/DSCI_524_group24/issues).
 
 **If you are reporting a bug, please follow the template guidelines. The more detailed your report, the easier and thus faster we can help you.**
 
@@ -22,11 +22,11 @@ Look through the GitHub issues for features. Anything labelled with `enhancement
 
 ### Write Documentation
 
-`ridge_remake` could always use more documentation, whether as part of the official documentation, in docstrings, or even on the web in blog posts. Just [open an issue](https://github.com/suryashch/ridge_remake/issues) to let us know what you will be working on so that we can provide guidance.
+`ridge_remake` could always use more documentation, whether as part of the official documentation, in docstrings, or even on the web in blog posts. Just [open an issue](https://github.com/UBC-MDS/DSCI_524_group24/issues) to let us know what you will be working on so that we can provide guidance.
 
 ### Submit Feedback
 
-The best way to send feedback is to file an issue at [https://github.com/suryashch/ridge_remake/issues](https://github.com/UBC-MDS/DSCI_524_group24/issues).
+The best way to send feedback is to [file an issue](https://github.com/UBC-MDS/DSCI_524_group24/issues).
 
 ## Get Started!
 
