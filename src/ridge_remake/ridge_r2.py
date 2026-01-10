@@ -6,6 +6,10 @@ def ridge_get_r2(y_true, y_pred):
     the proportion of variance in the dependent variable that is predictable from
     the independent variable(s). Values range from -∞ to 1, where 1 indicates
     perfect prediction.
+
+    This function calcuates the ratio of the Residual Sum of Squares (RSS) to the
+    Total Sum of Squares (TSS), as a measure of how well the data performs compared
+    to the mean.
     
     Parameters
     ----------
@@ -33,7 +37,7 @@ def ridge_get_r2(y_true, y_pred):
     --------
     >>> y_true = np.array([3, -0.5, 2, 7])
     >>> y_pred = np.array([2.5, 0.0, 2, 8])
-    >>> ridge_scatter_r2(y_true, y_pred)
+    >>> ridge_get_r2(y_true, y_pred)
     0.9486081370449679
     """
     pass
