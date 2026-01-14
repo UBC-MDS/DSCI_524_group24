@@ -1,3 +1,5 @@
+import numpy as np
+
 def ridge_get_r2(y_true, y_pred):
     """
     Calculate the coefficient of determination (R² score) for a regression model.
@@ -40,4 +42,23 @@ def ridge_get_r2(y_true, y_pred):
     >>> ridge_get_r2(y_true, y_pred)
     0.9486081370449679
     """
-    pass
+
+    y_true = np.asarray(y_true)
+    y_pred = np.asarray(y_pred)
+
+    if y_true.size == 0 or y_pred.size == 0:
+        raise ValueError("Input arrays must not be empty.")
+    
+    ss_res = np.sum((y_true - y_pred) ** 2)
+    y_mean = np.mean(y_true)
+    ss_tot = np.sum((y_true - y_mean) ** 2)
+
+    if ss_tot == 0:
+        if ss_res == 0:
+            return 1.0
+        else:
+            return 0.0
+
+    r2 = 1 - (ss_res / ss_tot)
+    
+    return float(r2)
