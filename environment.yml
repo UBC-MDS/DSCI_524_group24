@@ -2,6 +2,7 @@ name: group-24-524
 channels:
   - conda-forge
 dependencies:
+  - matplotlib
   - pytest
   - python
   - numpy
