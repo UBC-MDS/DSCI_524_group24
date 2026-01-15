@@ -1,0 +1,10 @@
+name: group-24-524
+channels:
+  - conda-forge
+dependencies:
+  - python
+  - numpy
+  - pandas
+  - copier
+  - hatch
+  - hatchling
