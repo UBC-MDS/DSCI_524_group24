@@ -1,3 +1,18 @@
+"""
+PROMPT FOR CHATGPT:
+Write pytest unit tests for ridge_scatter.
+
+Create ONE test function: test_ridge_scatter (with 5 sub-cases).
+Use matplotlib headless backend (Agg). Use explicit asserts + pytest.raises.
+
+Cover: (1) normal case returns (ax, PathCollection) and correct point count/label,
+(2) x/y length mismatch -> ValueError,
+(3) empty inputs -> ValueError,
+(4) non-numeric inputs -> TypeError,
+(5) scatter_kwargs not dict/None -> TypeError.
+Use explicit asserts + pytest.raises.
+"""
+
 import matplotlib
 matplotlib.use("Agg") 
 import matplotlib.pyplot as plt
