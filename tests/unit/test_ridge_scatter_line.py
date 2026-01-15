@@ -9,6 +9,21 @@ import matplotlib.pyplot as plt
 from ridge_remake.ridge_scatter import ridge_scatter
 from ridge_remake.ridge_scatter_line import ridge_scatter_line
 
+"""
+PROMPT FOR CHATGPT:
+Write pytest unit tests for ridge_scatter_line.
+
+Create test functions for these cases
+
+Cover:
+(1) normal overlay adds exactly 1 line to ax and line x/y match expected (sorted by x by default),
+(2) sort_x=False keeps original x order,
+(3) invalid ax (None or no .plot) -> TypeError,
+(4) x and y_line length mismatch -> ValueError,
+(5) non-numeric x or y_line -> TypeError,
+(6) line_kwargs not dict/None -> TypeError.
+"""
+
 
 def test_overlay_line_sorted_by_x():
     """Line should be sorted by x by default so it doesn't zig-zag."""
