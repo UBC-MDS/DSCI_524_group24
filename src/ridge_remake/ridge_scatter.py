@@ -1,3 +1,5 @@
+import numpy as np
+
 def ridge_scatter(ax, x, y, *, scatter_kwargs=None, label=None):
     """
     Create a scatter plot on a provided Matplotlib Axes object.
@@ -34,4 +36,28 @@ def ridge_scatter(ax, x, y, *, scatter_kwargs=None, label=None):
     fitted line. To overlay a precomputed line after plotting points, call
     ``ridge_scatter_line(ax, x_line, y_line, ...)``.
     """
-    pass
+    if ax is None or not hasattr(ax, "scatter"):
+        raise TypeError("ax must be a Matplotlib Axes-like object with a .scatter method.")
+
+    if scatter_kwargs is None:
+        scatter_kwargs = {}
+    elif not isinstance(scatter_kwargs, dict):
+        raise TypeError("scatter_kwargs must be a dict or None.")
+
+    if label is not None and not isinstance(label, str):
+        raise TypeError("label must be a string or None.")
+
+    try:
+        x_arr = np.asarray(x, dtype=float).ravel()
+        y_arr = np.asarray(y, dtype=float).ravel()
+    except (TypeError, ValueError):
+        raise TypeError("x and y must be numeric array-like inputs.") from None
+
+    if x_arr.size == 0 or y_arr.size == 0:
+        raise ValueError("x and y must be non-empty.")
+
+    if x_arr.size != y_arr.size:
+        raise ValueError("x and y must be the same length.")
+
+    points = ax.scatter(x_arr, y_arr, label=label, **scatter_kwargs)
+    return ax, points
