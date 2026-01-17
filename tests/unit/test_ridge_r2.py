@@ -2,6 +2,24 @@ import pytest
 import numpy as np
 from ridge_remake.ridge_r2 import ridge_get_r2
 
+"""
+A test module that tests the ridge_r2 module.
+
+I used below question to start by example,
+give me one example of testing edge case of this r2 function?
+-> it replied with test_r2_constant_target like the text case below.
+
+I made 4 more cases based on that example
+
+After that, I asked
+what would be the one example of testing error case?
+-> it replied with test_r2_type_error like the test case below.
+
+I made more error case based on that example
+
+LLM used: Google Gemini
+"""
+
 def test_r2_constant_target():
     """
     Edge Case 1: Zero Variance in True Values
@@ -60,3 +78,36 @@ def test_r2_empty_arrays():
     y_pred = np.array([])
     with pytest.raises(ValueError):
         ridge_get_r2(y_true, y_pred)
+
+def test_r2_type_error():
+    """Confirm TypeError is raised when passing non-iterable types (e.g., integers)."""
+    with pytest.raises(TypeError) as excinfo:
+        ridge_get_r2(10, [10])
+    
+    assert "Must be a sequence" in str(excinfo.value)
+
+def test_r2_shape_mismatch():
+    """Confirm ValueError is raised when y_true and y_pred have different lengths."""
+    y_true = [1, 2, 3]
+    y_pred = [1, 2] # Length mismatch
+    with pytest.raises(ValueError) as excinfo:
+        ridge_get_r2(y_true, y_pred)
+    assert "Shape mismatch" in str(excinfo.value)
+
+def test_r2_empty_input():
+    """Confirm ValueError is raised for empty arrays."""
+    with pytest.raises(ValueError) as excinfo:
+        ridge_get_r2([], [])
+    assert "cannot be empty" in str(excinfo.value)
+
+def test_r2_constant_target_fail():
+    """Verify that a constant target with incorrect prediction returns 0.0 (Defensive math)."""
+    y_true = [5, 5, 5]
+    y_pred = [4, 4, 4] # Model is consistently wrong
+    assert ridge_get_r2(y_true, y_pred) == 0.0
+
+def test_r2_constant_target_perfect():
+    """Verify that a constant target with perfect prediction returns 1.0."""
+    y_true = [5, 5, 5]
+    y_pred = [5, 5, 5]
+    assert ridge_get_r2(y_true, y_pred) == 1.0
