@@ -33,7 +33,11 @@ classifiers = [
 # TODO: add keywords
 keywords = []
 # TODO: add dependencies
-dependencies = ["numpy", "pandas", "matplotlib"]
+dependencies = [
+    "numpy==2.3.2",
+    "pandas==2.3.2",
+    "matplotlib==3.10.6"
+]
 
 [project.urls]
 Homepage = "https://github.com/suryashch/ridge_remake"

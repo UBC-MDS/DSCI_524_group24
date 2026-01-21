@@ -56,7 +56,7 @@ def test_high_dimensional_input():
 
 def test_pandas_compatibility():
     """Ensure the function handles DataFrame/Series inputs via np.asarray."""
-    X = pd.DataFrame({'a': [1, 2, 3], 'b': [4, 5, 6]})
+    X = pd.DataFrame({'a': [1, 2, 3], 'b': [4, 5, 7]}) 
     y = pd.Series([10, 20, 30])
     y_pred = get_reg_line(X, y)
     assert isinstance(y_pred, np.ndarray)
