@@ -34,9 +34,9 @@ classifiers = [
 keywords = []
 # TODO: add dependencies
 dependencies = [
-    "numpy==2.2.6",
-    "pandas==2.2.6",
-    "matplotlib==3.10.6"
+    "numpy==2.2.0",
+    "pandas==2.2.0",
+    "matplotlib==3.10.0"
 ]
 
 [project.urls]
