@@ -50,3 +50,6 @@ def test_ridge_scatter():
 
     with pytest.raises(TypeError, match="scatter_kwargs must be a dict"):
         ridge_scatter(ax, [1], [1], scatter_kwargs="not-a-dict")
+
+    with pytest.raises(TypeError, match="ax"):
+        ridge_scatter(None, [1, 2], [3, 4], scatter_kwargs=None)
