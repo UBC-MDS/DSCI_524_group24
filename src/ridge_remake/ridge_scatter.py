@@ -1,5 +1,6 @@
 import numpy as np
 
+
 def ridge_scatter(ax, x, y, *, scatter_kwargs=None, label=None):
     """
     Create a scatter plot on a provided Matplotlib Axes object.

@@ -75,6 +75,7 @@ tests = [
     "pytest-raises",
     "pytest-randomly",
     "pytest-xdist",
+    "ruff",
 ]
 
 
@@ -122,6 +123,17 @@ precision = 2
 # Use UV to create Hatch environments
 [tool.hatch.envs.default]
 installer = "uv"
+
+[tool.ruff]
+exclude = [".git", "__pycache__", "build", "dist", "docs"]
+line-length = 120
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
+ignore = []
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["S101"]
 
 ################################################################################
 # Hatch Environments
@@ -186,3 +198,4 @@ features = [
 
 [tool.hatch.envs.audit.scripts]
 check = ["pip-audit"]
+

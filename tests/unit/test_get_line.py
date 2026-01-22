@@ -14,11 +14,12 @@ can quickly tell why the function failed.
 
 LLM used: Google Gemini
 """
-import pandas as pd
 import numpy as np
+import pandas as pd
 import pytest
 
 from ridge_remake.get_reg_line import get_reg_line
+
 
 def test_perfect_linear_relationship():
     """Verify that y_pred matches y exactly in a noise-free linear system."""

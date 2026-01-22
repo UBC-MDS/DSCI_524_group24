@@ -1,5 +1,6 @@
-import pytest
 import numpy as np
+import pytest
+
 from ridge_remake.ridge_r2 import ridge_get_r2
 
 """

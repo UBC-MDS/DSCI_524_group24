@@ -27,3 +27,8 @@ jobs:
       - name: Check style and run tests
         run: |
           pytest
+
+      - name: Check style and run tests
+        run: |
+          ruff check .
+          pytest

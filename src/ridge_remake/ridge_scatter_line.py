@@ -1,5 +1,6 @@
 import numpy as np
 
+
 def ridge_scatter_line(ax, x, y_line, *, line_kwargs=None, label=None, sort_x=True):
     """
     Overlay a precomputed regression line on an existing scatter plot.
