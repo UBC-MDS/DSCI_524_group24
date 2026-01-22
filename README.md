@@ -1,19 +1,82 @@
 # RidgeMake
 
-A simple and intuitive linear regression tool for fitting data, visualizing results, and evaluating model performance.
+RidgeMake is a lightweight, user-friendly regression and visualization package designed to take you from raw paired data to an interpretable linear fit in a few steps. It supports fitting a line of best fit by computing the slope and intercept, generating a clear scatter plot of observed points, and overlaying the fitted regression line on the same figure for immediate visual comparison. To help you assess how well the model explains the variation in your data, RidgeMake also provides an R² score calculation as a simple, standard performance metric. Together, these functions make RidgeMake a practical tool for quick exploratory analysis, teaching demonstrations, and reproducible reporting of basic linear regression results.
 
 ## Features
 
--   **Line of Best Fit**: Calculate slope and intercept of the regression line
--   **Scatter Plot**: Visualize your data points
--   **Regression Line**: Plot the fitted line on the chart
--   **R² Score**: Evaluate model performance with R² metric
+-   `get_reg_line`: Calculate slope and intercept of the regression line
+-   `ridge_scatter`: Visualize your data points
+-   `ridge_scatter_line`: Plot the fitted line on the chart
+-   `ridge_get_r2`: Evaluate model performance with R² metric
 
-## Installation
+## Developer setup
+
+### (1) Clone the repository
 
 ```bash
-pip install numpy matplotlib scikit-learn
+git clone https://github.com/UBC-MDS/DSCI_524_group24.git
+cd DSCI_524_group24
 ```
+
+### (2) Set up the development environment
+
+```bash
+conda env create -f environment.yml
+conda activate group-24-524
+```
+
+### (3) Install the package
+From the repo root:
+
+```bash
+pip install -e .
+```
+
+## Running tests
+
+From the repo root:
+
+```bash
+pytest -q
+```
+
+## Building documentation locally
+
+### Generate docs locally
+From the repo root, run:
+```bash
+quartodoc build
+```
+
+```bash
+quarto render
+```
+
+## Deploying documentation
+
+Documentation deployment is automated via GitHub Actions on pushes to `main`.
+
+### (1) Ensure GitHub Pages is configured
+
+On GitHub:
+- Repository Settings → Pages
+- Set Source to GitHub Actions
+
+### (2) Trigger a deploy
+
+Push to `main`:
+
+```bash
+git push origin main
+```
+
+### (3) View the deployed site
+
+After the workflow completes, the documentation will be available at:
+https://github.io/DSCI_524_group24/
+
+"change as needed"
+
 
 ## Contributors
 
