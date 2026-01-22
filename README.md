@@ -17,16 +17,24 @@ git clone https://github.com/UBC-MDS/DSCI_524_group24.git
 cd DSCI_524_group24
 ```
 
-(2) Set up the development environment (from environment.yml)
+(2) Set up the development environment
+```bash
 conda env create -f environment.yml
-conda activate ridgemake
+conda activate group-24-524
+```
 
-
-If the environment already exists:
-## Installation
+(3) Install the package
+From the repo root:
 
 ```bash
-pip install numpy matplotlib scikit-learn
+pip install -e .
+```
+
+## Running tests
+From the repo root:
+
+```bash
+pytest -q
 ```
 
 ## Contributors
