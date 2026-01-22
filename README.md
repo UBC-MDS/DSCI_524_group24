@@ -1,14 +1,28 @@
 # RidgeMake
 
-A simple and intuitive linear regression tool for fitting data, visualizing results, and evaluating model performance.
+RidgeMake is a lightweight, user-friendly regression and visualization package designed to take you from raw paired data to an interpretable linear fit in a few steps. It supports fitting a line of best fit by computing the slope and intercept, generating a clear scatter plot of observed points, and overlaying the fitted regression line on the same figure for immediate visual comparison. To help you assess how well the model explains the variation in your data, RidgeMake also provides an R² score calculation as a simple, standard performance metric. Together, these functions make RidgeMake a practical tool for quick exploratory analysis, teaching demonstrations, and reproducible reporting of basic linear regression results.
 
 ## Features
 
--   **Line of Best Fit**: Calculate slope and intercept of the regression line
--   **Scatter Plot**: Visualize your data points
--   **Regression Line**: Plot the fitted line on the chart
--   **R² Score**: Evaluate model performance with R² metric
+-   `get_reg_line`: Calculate slope and intercept of the regression line
+-   `ridge_scatter`: Visualize your data points
+-   `ridge_scatter_line`: Plot the fitted line on the chart
+-   `ridge_get_r2`: Evaluate model performance with R² metric
 
+## Developer setup
+(1) Clone the repository
+
+```bash
+git clone https://github.com/UBC-MDS/DSCI_524_group24.git
+cd DSCI_524_group24
+```
+
+(2) Set up the development environment (from environment.yml)
+conda env create -f environment.yml
+conda activate ridgemake
+
+
+If the environment already exists:
 ## Installation
 
 ```bash
