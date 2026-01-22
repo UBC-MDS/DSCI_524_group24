@@ -1,5 +1,5 @@
 import numpy as np
-import pandas as pd
+
 
 def get_reg_line(X_train, y_train):
     """

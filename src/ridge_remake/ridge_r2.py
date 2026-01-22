@@ -1,5 +1,6 @@
 import numpy as np
 
+
 def ridge_get_r2(y_true, y_pred):
     """
     Calculate the coefficient of determination (R² score) for a regression model.
