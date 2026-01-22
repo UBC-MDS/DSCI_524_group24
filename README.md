@@ -10,20 +10,22 @@ RidgeMake is a lightweight, user-friendly regression and visualization package d
 -   `ridge_get_r2`: Evaluate model performance with R² metric
 
 ## Developer setup
-(1) Clone the repository
+
+### (1) Clone the repository
 
 ```bash
 git clone https://github.com/UBC-MDS/DSCI_524_group24.git
 cd DSCI_524_group24
 ```
 
-(2) Set up the development environment
+### (2) Set up the development environment
+
 ```bash
 conda env create -f environment.yml
 conda activate group-24-524
 ```
 
-(3) Install the package
+### (3) Install the package
 From the repo root:
 
 ```bash
@@ -31,10 +33,20 @@ pip install -e .
 ```
 
 ## Running tests
+
 From the repo root:
 
 ```bash
 pytest -q
+```
+
+## Building documentation locally
+
+### (1) Generate docs locally
+From the repo root, run:
+
+```bash
+quarto render docs
 ```
 
 ## Contributors
