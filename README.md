@@ -42,12 +42,41 @@ pytest -q
 
 ## Building documentation locally
 
-### (1) Generate docs locally
+### Generate docs locally
 From the repo root, run:
+```bash
+quartodoc build
+```
 
 ```bash
-quarto render docs
+quarto render
 ```
+
+## Deploying documentation
+
+Documentation deployment is automated via GitHub Actions on pushes to `main`.
+
+### (1) Ensure GitHub Pages is configured
+
+On GitHub:
+- Repository Settings → Pages
+- Set Source to GitHub Actions
+
+### (2) Trigger a deploy
+
+Push to `main`:
+
+```bash
+git push origin main
+```
+
+### (3) View the deployed site
+
+After the workflow completes, the documentation will be available at:
+https://github.io/DSCI_524_group24/
+
+"change as needed"
+
 
 ## Contributors
 
