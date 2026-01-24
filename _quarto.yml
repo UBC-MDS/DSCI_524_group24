@@ -26,4 +26,4 @@ quartodoc:
         - ridge_remake.get_reg_line
         - ridge_remake.ridge_scatter
         - ridge_remake.ridge_scatter_line
-        - ridge_remake.ridge_get_r2
+        - ridge_remake.ridge_r2.ridge_get_r2
