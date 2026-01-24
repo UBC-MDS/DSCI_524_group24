@@ -72,10 +72,7 @@ git push origin main
 
 ### (3) View the deployed site
 
-After the workflow completes, the documentation will be available at:
-https://github.io/DSCI_524_group24/
-
-"change as needed"
+After the workflow finishes, the site will be available at the repository’s GitHub Pages URL.
 
 
 ## Contributors
