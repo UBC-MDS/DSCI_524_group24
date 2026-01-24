@@ -6,13 +6,24 @@ website:
   title: "RidgeMake"
   navbar:
     left:
-      - href: index.qmd
-        text: Home
-      - href: reference.qmd
-        text: Reference
-      - href: demos.qmd
-        text: Demos
+      - text: "Home"
+        href: index.qmd
+      - text: "Reference"
+        href: reference/index.qmd
 
 format:
   html:
+    theme: cosmo
     toc: true
+
+quartodoc:
+  package: ridge_remake
+  dir: reference
+  sections:
+    - title: "Main API"
+      desc: "Core functions for fitting and visualizing a simple linear regression."
+      contents:
+        - ridge_remake.get_reg_line
+        - ridge_remake.ridge_scatter
+        - ridge_remake.ridge_scatter_line
+        - ridge_remake.ridge_get_r2
