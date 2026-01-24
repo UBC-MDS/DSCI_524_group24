@@ -1,0 +1,18 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "RidgeMake"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: reference.qmd
+        text: Reference
+      - href: demos.qmd
+        text: Demos
+
+format:
+  html:
+    toc: true
