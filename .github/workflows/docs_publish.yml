@@ -2,7 +2,11 @@ name: docs-publish
 
 on:
   push:
-    branches: [ "main" ]
+    #branches: [ "main" ]
+    # To publish docs on any branch push, use the following:
+    branches:
+      - "**"
+    ###
   workflow_dispatch:
 
 jobs:
