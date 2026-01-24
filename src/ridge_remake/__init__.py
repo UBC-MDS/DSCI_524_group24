@@ -27,3 +27,19 @@ Add a docstring here for the init module.
 This might include a very brief description of the package,
 its purpose, and any important notes.
 """
+
+from .get_reg_line import get_reg_line
+from .ridge_r2 import ridge_get_r2
+from .ridge_scatter import ridge_scatter
+from .ridge_scatter_line import ridge_scatter_line
+
+# Only include this if you truly have a ridge_remake function inside ridge_remake.py
+# from .ridge_remake import ridge_remake
+
+__all__ = [
+    "get_reg_line",
+    "ridge_get_r2",
+    "ridge_scatter",
+    "ridge_scatter_line",
+    # "ridge_remake",
+]
