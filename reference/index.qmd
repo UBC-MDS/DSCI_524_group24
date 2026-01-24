@@ -1,0 +1,12 @@
+# Function reference {.doc .doc-index}
+
+## Main API
+
+Core functions for fitting and visualizing a simple linear regression.
+
+| | |
+| --- | --- |
+| [ridge_remake.get_reg_line](ridge_remake.get_reg_line.qmd#ridge_remake.ridge_remake.get_reg_line) | Docstring for get_reg_line |
+| [ridge_remake.ridge_scatter](ridge_remake.ridge_scatter.qmd#ridge_remake.ridge_remake.ridge_scatter) | Docstring for ridge_scatter |
+| [ridge_remake.ridge_scatter_line](ridge_remake.ridge_scatter_line.qmd#ridge_remake.ridge_remake.ridge_scatter_line) | Docstring for ridge_scatter_line |
+| [ridge_remake.ridge_r2](ridge_remake.ridge_r2.qmd#ridge_remake.ridge_remake.ridge_r2) | Docstring for ridge_r2 |
