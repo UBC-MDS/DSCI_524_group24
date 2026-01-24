@@ -10,3 +10,4 @@ dependencies:
   - copier
   - hatch
   - hatchling
+  - quartodoc

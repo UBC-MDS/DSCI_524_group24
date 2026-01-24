@@ -1,0 +1,21 @@
+---
+title: "RidgeMake"
+---
+
+RidgeMake is a lightweight regression and visualization package for fitting a line to paired data, plotting points, overlaying the fitted line, and reporting an R² score.
+
+## Quick start
+
+```{python}
+#| eval: false
+from ridge_remake import get_reg_line, ridge_scatter, ridge_scatter_line, ridge_get_r2
+
+x = [1, 2, 3, 4, 5]
+y = [2, 4, 5, 4, 5]
+
+line = get_reg_line(x, y)
+fig = ridge_scatter(x, y)
+fig = ridge_scatter_line(fig, line)
+
+r2 = ridge_get_r2(x, y)
+print("R2:", r2)
