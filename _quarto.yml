@@ -21,9 +21,9 @@ quartodoc:
   dir: reference
   sections:
     - title: "Main API"
+      desc: "Core functions for fitting and visualizing a simple linear regression."
       contents:
-        - ridge_remake.get_reg_line.get_reg_line
-        - ridge_remake.ridge_scatter.ridge_scatter
-        - ridge_remake.ridge_scatter_line.ridge_scatter_line
-        - ridge_remake.ridge_r2.ridge_get_r2
-
+        - ridge_remake.get_reg_line
+        - ridge_remake.ridge_scatter
+        - ridge_remake.ridge_scatter_line
+        - ridge_remake.ridge_get_r2
