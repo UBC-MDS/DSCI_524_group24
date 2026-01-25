@@ -30,5 +30,12 @@ its purpose, and any important notes.
 
 from .get_reg_line import get_reg_line
 from .ridge_r2 import ridge_get_r2
-from .ridge_scatter_line import ridge_scatter_line
 from .ridge_scatter import ridge_scatter
+from .ridge_scatter_line import ridge_scatter_line
+
+__all__ = [
+    "get_reg_line",
+    "ridge_get_r2",
+    "ridge_scatter",
+    "ridge_scatter_line",
+]
