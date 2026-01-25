@@ -56,25 +56,53 @@
     "text": "This Code of Conduct is adapted from the Contributor Covenant, version 2.0, available at https://www.contributor-covenant.org/version/2/0/code_of_conduct.html.\nCommunity Impact Guidelines were inspired by Mozilla’s code of conduct enforcement ladder.\nFor answers to common questions about this code of conduct, see the FAQ at https://www.contributor-covenant.org/faq. Translations are available at https://www.contributor-covenant.org/translations."
   },
   {
-    "objectID": "reference/ridge_remake.get_reg_line.html",
-    "href": "reference/ridge_remake.get_reg_line.html",
-    "title": "ridge_remake.get_reg_line",
+    "objectID": "reference/get_reg_line.html",
+    "href": "reference/get_reg_line.html",
+    "title": "get_reg_line",
     "section": "",
-    "text": "ridge_remake.get_reg_line\nridge_remake.get_reg_line()\nDocstring for get_reg_line"
+    "text": "get_reg_line\n\n\n\n\n\nName\nDescription\n\n\n\n\nget_reg_line\nCompute linear regression predictions for the provided training data.\n\n\n\n\n\nget_reg_line.get_reg_line(X_train, y_train)\nCompute linear regression predictions for the provided training data.\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nX_train\narray-like or pd.DataFrame of shape (n_samples, n_features)\nThe training input samples.\nrequired\n\n\ny_train\narray-like or pd.DataFrame of shape (n_samples,) or (n_samples, n_targets)\nThe target values (real numbers).\nrequired\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\ny_pred\nndarray of shape (n_samples,) or (n_samples, n_targets)\nThe predicted values calculated from the linear least-squares fit"
+  },
+  {
+    "objectID": "reference/get_reg_line.html#functions",
+    "href": "reference/get_reg_line.html#functions",
+    "title": "get_reg_line",
+    "section": "",
+    "text": "Name\nDescription\n\n\n\n\nget_reg_line\nCompute linear regression predictions for the provided training data.\n\n\n\n\n\nget_reg_line.get_reg_line(X_train, y_train)\nCompute linear regression predictions for the provided training data.\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nX_train\narray-like or pd.DataFrame of shape (n_samples, n_features)\nThe training input samples.\nrequired\n\n\ny_train\narray-like or pd.DataFrame of shape (n_samples,) or (n_samples, n_targets)\nThe target values (real numbers).\nrequired\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\ny_pred\nndarray of shape (n_samples,) or (n_samples, n_targets)\nThe predicted values calculated from the linear least-squares fit"
+  },
+  {
+    "objectID": "reference/ridge_remake.ridge_scatter.html",
+    "href": "reference/ridge_remake.ridge_scatter.html",
+    "title": "ridge_remake.ridge_scatter",
+    "section": "",
+    "text": "ridge_remake.ridge_scatter\nridge_remake.ridge_scatter()\nDocstring for ridge_scatter"
+  },
+  {
+    "objectID": "reference/ridge_scatter_line.html",
+    "href": "reference/ridge_scatter_line.html",
+    "title": "ridge_scatter_line",
+    "section": "",
+    "text": "ridge_scatter_line\n\n\n\n\n\nName\nDescription\n\n\n\n\nridge_scatter_line\nOverlay a precomputed regression line on an existing scatter plot.\n\n\n\n\n\nridge_scatter_line.ridge_scatter_line(\n    ax,\n    x,\n    y_line,\n    *,\n    line_kwargs=None,\n    label=None,\n    sort_x=True,\n)\nOverlay a precomputed regression line on an existing scatter plot.\nThis function does NOT fit a model. It takes the x-values used in the scatter plot and a matching set of precomputed y-values (for example, predictions returned by get_reg_line), then draws the line on the provided Matplotlib Axes.\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nax\nmatplotlib.axes.Axes\nThe axes on which to draw the regression line. Typically the same axes returned by ridge_scatter().\nrequired\n\n\nx\narray-like of shape (n_samples,)\nX-coordinates corresponding to the predictions in y_line.\nrequired\n\n\ny_line\narray-like of shape (n_samples,)\nPrecomputed y-values to plot as a line (e.g., regression predictions). Must be the same length as x.\nrequired\n\n\nline_kwargs\ndict\nKeyword arguments forwarded to Matplotlib’s plot() to style the line (e.g., {“linewidth”: 2, “linestyle”: “–”}). If None, defaults are used.\nNone\n\n\nlabel\nstr\nLegend label for the regression line.\nNone\n\n\nsort_x\nbool\nIf True (default), sort points by x before plotting so the line does not zig-zag when x is not already ordered.\nTrue\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\nax\nmatplotlib.axes.Axes\nThe same axes, with the regression line added.\n\n\nline\nmatplotlib.lines.Line2D\nThe line artist created by Matplotlib.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\n\nTypeError\nIf ax is not Axes-like, if line_kwargs is not a dict/None, if label is not a string/None, if sort_x is not boolean, or if inputs cannot be converted to numeric arrays.\n\n\n\nValueError\nIf x or y_line are empty, or if they have different lengths."
+  },
+  {
+    "objectID": "reference/ridge_scatter_line.html#functions",
+    "href": "reference/ridge_scatter_line.html#functions",
+    "title": "ridge_scatter_line",
+    "section": "",
+    "text": "Name\nDescription\n\n\n\n\nridge_scatter_line\nOverlay a precomputed regression line on an existing scatter plot.\n\n\n\n\n\nridge_scatter_line.ridge_scatter_line(\n    ax,\n    x,\n    y_line,\n    *,\n    line_kwargs=None,\n    label=None,\n    sort_x=True,\n)\nOverlay a precomputed regression line on an existing scatter plot.\nThis function does NOT fit a model. It takes the x-values used in the scatter plot and a matching set of precomputed y-values (for example, predictions returned by get_reg_line), then draws the line on the provided Matplotlib Axes.\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nax\nmatplotlib.axes.Axes\nThe axes on which to draw the regression line. Typically the same axes returned by ridge_scatter().\nrequired\n\n\nx\narray-like of shape (n_samples,)\nX-coordinates corresponding to the predictions in y_line.\nrequired\n\n\ny_line\narray-like of shape (n_samples,)\nPrecomputed y-values to plot as a line (e.g., regression predictions). Must be the same length as x.\nrequired\n\n\nline_kwargs\ndict\nKeyword arguments forwarded to Matplotlib’s plot() to style the line (e.g., {“linewidth”: 2, “linestyle”: “–”}). If None, defaults are used.\nNone\n\n\nlabel\nstr\nLegend label for the regression line.\nNone\n\n\nsort_x\nbool\nIf True (default), sort points by x before plotting so the line does not zig-zag when x is not already ordered.\nTrue\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\nax\nmatplotlib.axes.Axes\nThe same axes, with the regression line added.\n\n\nline\nmatplotlib.lines.Line2D\nThe line artist created by Matplotlib.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\n\nTypeError\nIf ax is not Axes-like, if line_kwargs is not a dict/None, if label is not a string/None, if sort_x is not boolean, or if inputs cannot be converted to numeric arrays.\n\n\n\nValueError\nIf x or y_line are empty, or if they have different lengths."
   },
   {
     "objectID": "reference/index.html",
     "href": "reference/index.html",
     "title": "Function reference",
     "section": "",
-    "text": "Core functions for fitting and visualizing a simple linear regression.\n\n\n\nridge_remake.get_reg_line\nDocstring for get_reg_line\n\n\nridge_remake.ridge_scatter\nDocstring for ridge_scatter\n\n\nridge_remake.ridge_scatter_line\nDocstring for ridge_scatter_line\n\n\nridge_remake.ridge_r2\nDocstring for ridge_r2"
+    "text": "Core functions for fitting and visualizing a simple linear regression.\n\n\n\nget_reg_line\n\n\n\nridge_scatter\n\n\n\nridge_scatter_line\n\n\n\nridge_r2"
   },
   {
     "objectID": "reference/index.html#main-api",
     "href": "reference/index.html#main-api",
     "title": "Function reference",
     "section": "",
-    "text": "Core functions for fitting and visualizing a simple linear regression.\n\n\n\nridge_remake.get_reg_line\nDocstring for get_reg_line\n\n\nridge_remake.ridge_scatter\nDocstring for ridge_scatter\n\n\nridge_remake.ridge_scatter_line\nDocstring for ridge_scatter_line\n\n\nridge_remake.ridge_r2\nDocstring for ridge_r2"
+    "text": "Core functions for fitting and visualizing a simple linear regression.\n\n\n\nget_reg_line\n\n\n\nridge_scatter\n\n\n\nridge_scatter_line\n\n\n\nridge_r2"
   },
   {
     "objectID": "index.html",
@@ -210,11 +238,39 @@
     "text": "ridge_remake.ridge_r2\nridge_remake.ridge_r2()\nDocstring for ridge_r2"
   },
   {
-    "objectID": "reference/ridge_remake.ridge_scatter.html",
-    "href": "reference/ridge_remake.ridge_scatter.html",
-    "title": "ridge_remake.ridge_scatter",
+    "objectID": "reference/ridge_r2.html",
+    "href": "reference/ridge_r2.html",
+    "title": "ridge_r2",
     "section": "",
-    "text": "ridge_remake.ridge_scatter\nridge_remake.ridge_scatter()\nDocstring for ridge_scatter"
+    "text": "ridge_r2\n\n\n\n\n\nName\nDescription\n\n\n\n\nridge_get_r2\nCalculate the coefficient of determination (R² score) for a regression model.\n\n\n\n\n\nridge_r2.ridge_get_r2(y_true, y_pred)\nCalculate the coefficient of determination (R² score) for a regression model.\nThe R² score measures how well the regression line fits the data, representing the proportion of variance in the dependent variable that is predictable from the independent variable(s). Values range from -∞ to 1, where 1 indicates perfect prediction.\nThis function calcuates the ratio of the Residual Sum of Squares (RSS) to the Total Sum of Squares (TSS), as a measure of how well the data performs compared to the mean.\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\ny_true\narray-like of shape (n_samples,)\nTrue target values (observed data points).\nrequired\n\n\ny_pred\narray-like of shape (n_samples,)\nPredicted values from the regression model.\nrequired\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\nr2\nfloat\nThe R² score. A value of 1.0 indicates perfect prediction, 0.0 indicates the model performs no better than predicting the mean, and negative values indicate the model performs worse than a horizontal line at the mean.\n\n\n\n\n\n\nR² is calculated as: R² = 1 - (SS_res / SS_tot) where: SS_res = Σ(y_true - y_pred)² (residual sum of squares) SS_tot = Σ(y_true - ȳ)² (total sum of squares)\n\n\n\n&gt;&gt;&gt; y_true = np.array([3, -0.5, 2, 7])\n&gt;&gt;&gt; y_pred = np.array([2.5, 0.0, 2, 8])\n&gt;&gt;&gt; ridge_get_r2(y_true, y_pred)\n0.9486081370449679"
+  },
+  {
+    "objectID": "reference/ridge_r2.html#functions",
+    "href": "reference/ridge_r2.html#functions",
+    "title": "ridge_r2",
+    "section": "",
+    "text": "Name\nDescription\n\n\n\n\nridge_get_r2\nCalculate the coefficient of determination (R² score) for a regression model.\n\n\n\n\n\nridge_r2.ridge_get_r2(y_true, y_pred)\nCalculate the coefficient of determination (R² score) for a regression model.\nThe R² score measures how well the regression line fits the data, representing the proportion of variance in the dependent variable that is predictable from the independent variable(s). Values range from -∞ to 1, where 1 indicates perfect prediction.\nThis function calcuates the ratio of the Residual Sum of Squares (RSS) to the Total Sum of Squares (TSS), as a measure of how well the data performs compared to the mean.\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\ny_true\narray-like of shape (n_samples,)\nTrue target values (observed data points).\nrequired\n\n\ny_pred\narray-like of shape (n_samples,)\nPredicted values from the regression model.\nrequired\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\nr2\nfloat\nThe R² score. A value of 1.0 indicates perfect prediction, 0.0 indicates the model performs no better than predicting the mean, and negative values indicate the model performs worse than a horizontal line at the mean.\n\n\n\n\n\n\nR² is calculated as: R² = 1 - (SS_res / SS_tot) where: SS_res = Σ(y_true - y_pred)² (residual sum of squares) SS_tot = Σ(y_true - ȳ)² (total sum of squares)\n\n\n\n&gt;&gt;&gt; y_true = np.array([3, -0.5, 2, 7])\n&gt;&gt;&gt; y_pred = np.array([2.5, 0.0, 2, 8])\n&gt;&gt;&gt; ridge_get_r2(y_true, y_pred)\n0.9486081370449679"
+  },
+  {
+    "objectID": "reference/ridge_scatter.html",
+    "href": "reference/ridge_scatter.html",
+    "title": "ridge_scatter",
+    "section": "",
+    "text": "ridge_scatter\n\n\n\n\n\nName\nDescription\n\n\n\n\nridge_scatter\nCreate a scatter plot on a provided Matplotlib Axes object.\n\n\n\n\n\nridge_scatter.ridge_scatter(ax, x, y, *, scatter_kwargs=None, label=None)\nCreate a scatter plot on a provided Matplotlib Axes object.\nThis function is the base plotting function for the ridge regression visualization workflow. It draws the raw data points (x, y) on the provided Axes. A separate function, ridge_scatter_line(), can then be called to overlay a precomputed regression line on the same Axes.\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nax\nmatplotlib.axes.Axes\nThe axes on which to draw the scatter plot.\nrequired\n\n\nx\narray-like of shape (n_samples,)\nX-coordinates of the data points.\nrequired\n\n\ny\narray-like of shape (n_samples,)\nY-coordinates of the data points. Must be the same length as x.\nrequired\n\n\nscatter_kwargs\ndict\nKeyword arguments forwarded to Matplotlib’s scatter() to style the points (e.g., {“s”: 25, “alpha”: 0.8, “marker”: “o”}). If None, defaults are used.\nNone\n\n\nlabel\nstr\nLegend label for the scatter points.\nNone\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\nax\nmatplotlib.axes.Axes\nThe same axes, with the scatter points added.\n\n\npoints\nmatplotlib.collections.PathCollection\nThe scatter artist created by Matplotlib.\n\n\n\n\n\n\nThis function only creates the scatter plot and does not compute or overlay any fitted line. To overlay a precomputed line after plotting points, call ridge_scatter_line(ax, x_line, y_line, ...)."
+  },
+  {
+    "objectID": "reference/ridge_scatter.html#functions",
+    "href": "reference/ridge_scatter.html#functions",
+    "title": "ridge_scatter",
+    "section": "",
+    "text": "Name\nDescription\n\n\n\n\nridge_scatter\nCreate a scatter plot on a provided Matplotlib Axes object.\n\n\n\n\n\nridge_scatter.ridge_scatter(ax, x, y, *, scatter_kwargs=None, label=None)\nCreate a scatter plot on a provided Matplotlib Axes object.\nThis function is the base plotting function for the ridge regression visualization workflow. It draws the raw data points (x, y) on the provided Axes. A separate function, ridge_scatter_line(), can then be called to overlay a precomputed regression line on the same Axes.\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nax\nmatplotlib.axes.Axes\nThe axes on which to draw the scatter plot.\nrequired\n\n\nx\narray-like of shape (n_samples,)\nX-coordinates of the data points.\nrequired\n\n\ny\narray-like of shape (n_samples,)\nY-coordinates of the data points. Must be the same length as x.\nrequired\n\n\nscatter_kwargs\ndict\nKeyword arguments forwarded to Matplotlib’s scatter() to style the points (e.g., {“s”: 25, “alpha”: 0.8, “marker”: “o”}). If None, defaults are used.\nNone\n\n\nlabel\nstr\nLegend label for the scatter points.\nNone\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\nax\nmatplotlib.axes.Axes\nThe same axes, with the scatter points added.\n\n\npoints\nmatplotlib.collections.PathCollection\nThe scatter artist created by Matplotlib.\n\n\n\n\n\n\nThis function only creates the scatter plot and does not compute or overlay any fitted line. To overlay a precomputed line after plotting points, call ridge_scatter_line(ax, x_line, y_line, ...)."
+  },
+  {
+    "objectID": "reference/ridge_remake.get_reg_line.html",
+    "href": "reference/ridge_remake.get_reg_line.html",
+    "title": "ridge_remake.get_reg_line",
+    "section": "",
+    "text": "ridge_remake.get_reg_line\nridge_remake.get_reg_line()\nDocstring for get_reg_line"
   },
   {
     "objectID": "reference/ridge_remake.ridge_scatter_line.html",

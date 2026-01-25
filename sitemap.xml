@@ -2,42 +2,58 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://UBC-MDS.github.io/DSCI_524_group24/CODE_OF_CONDUCT.html</loc>
-    <lastmod>2026-01-25T00:16:36.595Z</lastmod>
+    <lastmod>2026-01-25T09:00:06.928Z</lastmod>
   </url>
   <url>
-    <loc>https://UBC-MDS.github.io/DSCI_524_group24/reference/ridge_remake.get_reg_line.html</loc>
-    <lastmod>2026-01-25T00:16:36.602Z</lastmod>
-  </url>
-  <url>
-    <loc>https://UBC-MDS.github.io/DSCI_524_group24/reference/index.html</loc>
-    <lastmod>2026-01-25T00:17:19.108Z</lastmod>
-  </url>
-  <url>
-    <loc>https://UBC-MDS.github.io/DSCI_524_group24/index.html</loc>
-    <lastmod>2026-01-25T00:16:36.602Z</lastmod>
-  </url>
-  <url>
-    <loc>https://UBC-MDS.github.io/DSCI_524_group24/DEVELOPMENT.html</loc>
-    <lastmod>2026-01-25T00:16:36.595Z</lastmod>
-  </url>
-  <url>
-    <loc>https://UBC-MDS.github.io/DSCI_524_group24/CHANGELOG.html</loc>
-    <lastmod>2026-01-25T00:16:36.595Z</lastmod>
-  </url>
-  <url>
-    <loc>https://UBC-MDS.github.io/DSCI_524_group24/CONTRIBUTING.html</loc>
-    <lastmod>2026-01-25T00:16:36.595Z</lastmod>
-  </url>
-  <url>
-    <loc>https://UBC-MDS.github.io/DSCI_524_group24/reference/ridge_remake.ridge_r2.html</loc>
-    <lastmod>2026-01-25T00:16:36.602Z</lastmod>
+    <loc>https://UBC-MDS.github.io/DSCI_524_group24/reference/get_reg_line.html</loc>
+    <lastmod>2026-01-25T09:00:43.973Z</lastmod>
   </url>
   <url>
     <loc>https://UBC-MDS.github.io/DSCI_524_group24/reference/ridge_remake.ridge_scatter.html</loc>
-    <lastmod>2026-01-25T00:16:36.602Z</lastmod>
+    <lastmod>2026-01-25T09:00:06.936Z</lastmod>
+  </url>
+  <url>
+    <loc>https://UBC-MDS.github.io/DSCI_524_group24/reference/ridge_scatter_line.html</loc>
+    <lastmod>2026-01-25T09:00:43.991Z</lastmod>
+  </url>
+  <url>
+    <loc>https://UBC-MDS.github.io/DSCI_524_group24/reference/index.html</loc>
+    <lastmod>2026-01-25T09:00:43.945Z</lastmod>
+  </url>
+  <url>
+    <loc>https://UBC-MDS.github.io/DSCI_524_group24/index.html</loc>
+    <lastmod>2026-01-25T09:00:06.935Z</lastmod>
+  </url>
+  <url>
+    <loc>https://UBC-MDS.github.io/DSCI_524_group24/DEVELOPMENT.html</loc>
+    <lastmod>2026-01-25T09:00:06.928Z</lastmod>
+  </url>
+  <url>
+    <loc>https://UBC-MDS.github.io/DSCI_524_group24/CHANGELOG.html</loc>
+    <lastmod>2026-01-25T09:00:06.927Z</lastmod>
+  </url>
+  <url>
+    <loc>https://UBC-MDS.github.io/DSCI_524_group24/CONTRIBUTING.html</loc>
+    <lastmod>2026-01-25T09:00:06.928Z</lastmod>
+  </url>
+  <url>
+    <loc>https://UBC-MDS.github.io/DSCI_524_group24/reference/ridge_remake.ridge_r2.html</loc>
+    <lastmod>2026-01-25T09:00:06.935Z</lastmod>
+  </url>
+  <url>
+    <loc>https://UBC-MDS.github.io/DSCI_524_group24/reference/ridge_r2.html</loc>
+    <lastmod>2026-01-25T09:00:43.998Z</lastmod>
+  </url>
+  <url>
+    <loc>https://UBC-MDS.github.io/DSCI_524_group24/reference/ridge_scatter.html</loc>
+    <lastmod>2026-01-25T09:00:43.981Z</lastmod>
+  </url>
+  <url>
+    <loc>https://UBC-MDS.github.io/DSCI_524_group24/reference/ridge_remake.get_reg_line.html</loc>
+    <lastmod>2026-01-25T09:00:06.935Z</lastmod>
   </url>
   <url>
     <loc>https://UBC-MDS.github.io/DSCI_524_group24/reference/ridge_remake.ridge_scatter_line.html</loc>
-    <lastmod>2026-01-25T00:16:36.602Z</lastmod>
+    <lastmod>2026-01-25T09:00:06.936Z</lastmod>
   </url>
 </urlset>
