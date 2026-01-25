@@ -1,0 +1,7 @@
+# ridge_remake.ridge_r2 { #ridge_remake.ridge_remake.ridge_r2 }
+
+```python
+ridge_remake.ridge_r2()
+```
+
+Docstring for ridge_r2

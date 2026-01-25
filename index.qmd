@@ -1,0 +1,254 @@
+---
+title: "RidgeMake"
+subtitle: "A lightweight regression + plotting toolkit (line fit, scatter, overlay line, and R²)."
+execute:
+  enabled: false
+format:
+  html:
+    toc: true
+    toc-location: right
+    number-sections: true
+    code-copy: true
+    theme: cosmo
+---
+
+## What this package does
+
+RidgeMake helps you do one simple workflow:
+
+1. Fit a straight line to paired data (x, y)
+2. Plot the points
+3. Overlay the fitted line
+4. Report an R² score
+
+It’s designed for users with minimal Python experience: you provide arrays, and you get back predictions + a Matplotlib plot.
+
+---
+
+## Install
+
+If you are developing locally:
+
+```{bash}
+pip install -e .
+```
+
+If you are installing from a released package (example):
+
+```{bash}
+pip install ridge_remake
+```
+
+---
+
+## Quick start (copy/paste)
+
+```{python}
+#| eval: false
+import numpy as np
+import matplotlib.pyplot as plt
+
+# If your package exports these at the top-level:
+# from ridge_remake import get_reg_line, ridge_scatter, ridge_scatter_line, ridge_get_r2
+
+# If not, import from the module files:
+from ridge_remake.get_reg_line import get_reg_line
+from ridge_remake.ridge_scatter import ridge_scatter
+from ridge_remake.ridge_scatter_line import ridge_scatter_line
+from ridge_remake.ridge_r2 import ridge_get_r2
+
+# Example data
+x = np.array([1, 2, 3, 4, 5], dtype=float)
+y = np.array([2, 4, 5, 4, 5], dtype=float)
+
+# 1) Fit predictions on the training x
+X = x.reshape(-1, 1)          # make it 2D for the regression math
+y_pred = get_reg_line(X, y)
+
+# 2) Plot scatter
+fig, ax = plt.subplots()
+ax, _ = ridge_scatter(ax, x, y, scatter_kwargs={"alpha": 0.8}, label="data")
+
+# 3) Overlay fitted line (sort x so the line looks clean)
+order = np.argsort(x)
+x_line = x[order]
+y_line = y_pred[order]
+ax, _ = ridge_scatter_line(ax, x_line, y_line, line_kwargs={"linewidth": 2}, label="fit")
+
+# 4) R² score
+r2 = ridge_get_r2(y_true=y, y_pred=y_pred)
+ax.set_title(f"RidgeMake demo (R² = {r2:.3f})")
+ax.legend()
+plt.show()
+```
+
+---
+
+## Function1
+
+`get_reg_line(X_train, y_train)`
+
+### What it does
+Computes linear regression predictions using a least-squares (normal equation) fit, then returns predicted values for the input `X_train`.
+
+### Docstring (from the package)
+Compute linear regression predictions for the provided training data.
+
+Parameters
+- X_train: array-like or pd.DataFrame of shape (n_samples, n_features)
+- y_train: array-like or pd.DataFrame of shape (n_samples,) or (n_samples, n_targets)
+
+Returns
+- y_pred: ndarray of shape (n_samples,) or (n_samples, n_targets)
+
+### Example
+```{python}
+#| eval: false
+import numpy as np
+from ridge_remake.get_reg_line import get_reg_line
+
+x = np.array([1, 2, 3, 4, 5], dtype=float)
+y = np.array([2, 4, 5, 4, 5], dtype=float)
+
+X = x.reshape(-1, 1)
+y_pred = get_reg_line(X, y)
+print(y_pred)
+```
+
+### Common pitfalls
+- `X_train` must be 2D (use `x.reshape(-1, 1)` if you only have one feature).
+- `X_train` and `y_train` must have the same number of rows/samples.
+
+---
+
+## Function 2
+
+`ridge_scatter(ax, x, y, *, scatter_kwargs=None, label=None)`
+
+### What it does
+Draws a scatter plot on an existing Matplotlib `Axes`. This function only plots points; it does not fit or draw a line.
+
+### Docstring (from the package)
+Create a scatter plot on a provided Matplotlib Axes object.
+This function is the base plotting function for the ridge regression visualization workflow.
+It draws the raw data points (x, y) on the provided Axes.
+
+Parameters
+- ax: matplotlib.axes.Axes
+- x: array-like (n_samples,)
+- y: array-like (n_samples,)
+- scatter_kwargs: dict, optional (passed to `ax.scatter(...)`)
+- label: str, optional
+
+Returns
+- ax: the same axes (with points added)
+- points: the scatter artist
+
+### Example
+```{python}
+#| eval: false
+import numpy as np
+import matplotlib.pyplot as plt
+from ridge_remake.ridge_scatter import ridge_scatter
+
+x = np.array([1, 2, 3, 4, 5], dtype=float)
+y = np.array([2, 4, 5, 4, 5], dtype=float)
+
+fig, ax = plt.subplots()
+ax, points = ridge_scatter(ax, x, y, scatter_kwargs={"alpha": 0.8}, label="data")
+ax.legend()
+plt.show()
+```
+
+### Common pitfalls
+- You must pass a real Matplotlib `Axes` object (created by `plt.subplots()`).
+- `x` and `y` must be numeric, non-empty, and the same length.
+
+---
+
+## Function 3 
+
+`ridge_scatter_line(ax, x_line, y_line, *, line_kwargs=None, label=None)`
+
+### What it does
+Overlays a line on an existing Matplotlib `Axes`. You provide the line coordinates (`x_line`, `y_line`). This function does not compute the regression line—it only draws it.
+
+### Recommended usage pattern
+1. Compute predictions first (using `get_reg_line`)
+2. Sort `x` so the line doesn’t zig-zag
+3. Call `ridge_scatter_line(ax, x_sorted, y_pred_sorted, ...)`
+
+### Example
+```{python}
+#| eval: false
+import numpy as np
+import matplotlib.pyplot as plt
+from ridge_remake.get_reg_line import get_reg_line
+from ridge_remake.ridge_scatter import ridge_scatter
+from ridge_remake.ridge_scatter_line import ridge_scatter_line
+
+x = np.array([3, 1, 5, 2, 4], dtype=float)
+y = np.array([5, 2, 5, 4, 4], dtype=float)
+
+X = x.reshape(-1, 1)
+y_pred = get_reg_line(X, y)
+
+fig, ax = plt.subplots()
+ax, _ = ridge_scatter(ax, x, y)
+
+order = np.argsort(x)
+x_line = x[order]
+y_line = y_pred[order]
+
+ax, line = ridge_scatter_line(ax, x_line, y_line, line_kwargs={"linewidth": 2}, label="fit")
+ax.legend()
+plt.show()
+```
+
+### Common pitfalls
+- `x_line` and `y_line` must be the same length.
+- Sort `x_line` before plotting, or your line may look “scrambled”.
+
+---
+
+## Function 4 
+
+`ridge_get_r2(y_true, y_pred)`
+
+### What it does
+Computes the coefficient of determination (R²). This tells you how well your predicted values explain the variation in the true values.
+
+- R² = 1 means perfect predictions
+- R² = 0 means “no better than predicting the mean”
+- R² < 0 means worse than predicting the mean
+
+### Example
+```{python}
+#| eval: false
+import numpy as np
+from ridge_remake.get_reg_line import get_reg_line
+from ridge_remake.ridge_r2 import ridge_get_r2
+
+x = np.array([1, 2, 3, 4, 5], dtype=float)
+y = np.array([2, 4, 5, 4, 5], dtype=float)
+
+y_pred = get_reg_line(x.reshape(-1, 1), y)
+r2 = ridge_get_r2(y_true=y, y_pred=y_pred)
+print(r2)
+```
+
+### Common pitfalls
+- `y_true` and `y_pred` must be the same shape and aligned to the same observations.
+
+---
+
+## “How do I explore more?”
+
+- Go to the **Reference** tab in the navbar to see the auto-generated API docs from docstrings.
+- Copy the examples above and change:
+  - your `x` and `y`
+  - point style (`scatter_kwargs`)
+  - line style (`line_kwargs`)
+  - number of points / range of values
+
+If you can run the Quick start successfully, you can run everything in this package.

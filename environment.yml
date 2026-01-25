@@ -2,11 +2,16 @@ name: group-24-524
 channels:
   - conda-forge
 dependencies:
-  - matplotlib
   - pytest
-  - python
-  - numpy
+  - python=3.12
+  - numpy<2
   - pandas
   - copier
   - hatch
   - hatchling
+  - quartodoc
+  - matplotlib
+  - pip
+  - pip:
+      - quartodoc
+

@@ -1,0 +1,7 @@
+# ridge_remake.ridge_scatter { #ridge_remake.ridge_remake.ridge_scatter }
+
+```python
+ridge_remake.ridge_scatter()
+```
+
+Docstring for ridge_scatter
