@@ -27,17 +27,15 @@ It’s designed for users with minimal Python experience: you provide arrays, an
 
 ## Install
 
-If you are developing locally (recommended for this course repo):
+If you are developing locally:
 
 ```{bash}
-#| eval: false
 pip install -e .
 ```
 
 If you are installing from a released package (example):
 
 ```{bash}
-#| eval: false
 pip install ridge_remake
 ```
 
@@ -86,9 +84,9 @@ plt.show()
 
 ---
 
-## Functions
+## Function1
 
-## `get_reg_line(X_train, y_train)`
+`get_reg_line(X_train, y_train)`
 
 ### What it does
 Computes linear regression predictions using a least-squares (normal equation) fit, then returns predicted values for the input `X_train`.
@@ -123,7 +121,9 @@ print(y_pred)
 
 ---
 
-## `ridge_scatter(ax, x, y, *, scatter_kwargs=None, label=None)`
+## Function 2
+
+`ridge_scatter(ax, x, y, *, scatter_kwargs=None, label=None)`
 
 ### What it does
 Draws a scatter plot on an existing Matplotlib `Axes`. This function only plots points; it does not fit or draw a line.
@@ -166,7 +166,9 @@ plt.show()
 
 ---
 
-## `ridge_scatter_line(ax, x_line, y_line, *, line_kwargs=None, label=None)`
+## Function 3 
+
+`ridge_scatter_line(ax, x_line, y_line, *, line_kwargs=None, label=None)`
 
 ### What it does
 Overlays a line on an existing Matplotlib `Axes`. You provide the line coordinates (`x_line`, `y_line`). This function does not compute the regression line—it only draws it.
@@ -209,7 +211,9 @@ plt.show()
 
 ---
 
-## `ridge_get_r2(y_true, y_pred)`
+## Function 4 
+
+`ridge_get_r2(y_true, y_pred)`
 
 ### What it does
 Computes the coefficient of determination (R²). This tells you how well your predicted values explain the variation in the true values.
