@@ -1,6 +1,8 @@
 ---
 title: "RidgeMake"
 subtitle: "A lightweight regression + plotting toolkit (line fit, scatter, overlay line, and R²)."
+execute:
+  enabled: false
 format:
   html:
     toc: true
