@@ -99,3 +99,47 @@ def test_bad_line_kwargs_typeerror():
         ridge_scatter_line(ax, [1, 2], [3, 4], line_kwargs=[("lw", 2)])
 
     plt.close(fig)
+
+def test_label_and_styling_application():
+    """
+    Verify that label and line_kwargs are correctly applied to the Matplotlib line.
+    """
+    fig, ax = plt.subplots()
+    x = [1, 2, 3]
+    y_line = [2, 4, 6]
+    custom_kwargs = {"color": "red", "linewidth": 5, "linestyle": "--"}
+    custom_label = "Regression Model"
+
+    _, line = ridge_scatter_line(
+        ax, x, y_line, 
+        line_kwargs=custom_kwargs, 
+        label=custom_label
+    )
+
+    # Check if the label was applied
+    assert line.get_label() == custom_label
+    # Check if kwargs were passed correctly
+    assert line.get_color() == "red"
+    assert line.get_linewidth() == 5
+    assert line.get_linestyle() == "--"
+
+    plt.close(fig)
+
+def test_return_values_consistency():
+    """
+    Verify that the function returns the original Axes object and the created Line2D artist.
+    """
+    fig, ax = plt.subplots()
+    x = [0, 1]
+    y_line = [0, 1]
+
+    returned_ax, returned_line = ridge_scatter_line(ax, x, y_line)
+
+    # The returned ax should be the same object passed in
+    assert returned_ax is ax
+    # The returned line should be a Matplotlib Line2D object
+    assert isinstance(returned_line, matplotlib.lines.Line2D)
+    # The returned line should be the same one present in the axes
+    assert returned_line in ax.lines
+
+    plt.close(fig)

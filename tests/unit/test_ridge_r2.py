@@ -112,3 +112,34 @@ def test_r2_constant_target_perfect():
     y_true = [5, 5, 5]
     y_pred = [5, 5, 5]
     assert ridge_get_r2(y_true, y_pred) == 1.0
+
+def test_r2_negative_score():
+    """
+    Conceptual Case: Worse Than Mean
+    Verify that the function correctly returns a negative value when the 
+    predictions are worse than simply predicting the mean of y_true.
+    """
+    y_true = np.array([1, 2, 3])  # Mean is 2.0, SS_tot is 2.0
+    # Predictions that are very far from the true values
+    y_pred = np.array([10, 20, 30]) 
+    
+    result = ridge_get_r2(y_true, y_pred)
+    
+    # R2 = 1 - (SS_res / SS_tot). If SS_res > SS_tot, R2 must be negative.
+    assert result < 0.0
+    assert isinstance(result, float)
+
+def test_r2_2d_column_vectors():
+    """
+    Structural Case: 2D Column Vectors (n_samples, 1)
+    In many ML workflows, y is often reshaped as a 2D column vector.
+    Verify that the function handles (n, 1) shapes correctly via numpy broadcasting.
+    """
+    y_true = np.array([[1.0], [2.0], [3.0]])
+    y_pred = np.array([[1.1], [1.9], [3.1]])
+    
+    result = ridge_get_r2(y_true, y_pred)
+    
+    # The result should be a single float value, even for 2D inputs
+    assert np.isscalar(result)
+    assert 0.0 < result < 1.0
