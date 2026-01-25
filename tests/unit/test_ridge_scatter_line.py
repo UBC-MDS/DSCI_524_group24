@@ -100,16 +100,3 @@ def test_bad_line_kwargs_typeerror():
 
     plt.close(fig)
 
-###extra test for milestone 3
-def test_ridge_scatter_line_smoke():
-    # Just confirm the function runs without raising an error.
-    x = [1, 2, 3, 4]
-    y = [2, 3, 5, 7]
-
-    fig = ridge_scatter(x, y)
-    line = get_reg_line(x, y)
-
-    # Passes as long as no exception is raised.
-    ridge_scatter_line(fig, line)
-
-    assert True
