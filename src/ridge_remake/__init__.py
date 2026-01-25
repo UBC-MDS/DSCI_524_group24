@@ -28,24 +28,3 @@ This might include a very brief description of the package,
 its purpose, and any important notes.
 """
 
-
-"""RidgeMake: lightweight regression + plotting helpers.
-
-This package provides:
-- get_reg_line: fit a simple regression line to paired data
-- ridge_scatter: scatter plot for paired data
-- ridge_scatter_line: overlay the fitted line on the scatter plot
-- ridge_get_r2: compute R^2 from y_true and y_pred
-"""
-
-from .get_reg_line import get_reg_line
-from .ridge_scatter import ridge_scatter
-from .ridge_scatter_line import ridge_scatter_line
-from .ridge_r2 import ridge_get_r2
-
-__all__ = [
-    "get_reg_line",
-    "ridge_scatter",
-    "ridge_scatter_line",
-    "ridge_get_r2",
-]

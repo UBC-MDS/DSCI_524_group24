@@ -1,7 +1,6 @@
 """
 Basic recreating of the functionality of the Ridge function
 """
-from .ridge_r2 import ridge_get_r2
 
 def get_reg_line():
     """
