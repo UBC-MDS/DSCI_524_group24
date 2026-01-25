@@ -99,3 +99,26 @@ def test_bad_line_kwargs_typeerror():
         ridge_scatter_line(ax, [1, 2], [3, 4], line_kwargs=[("lw", 2)])
 
     plt.close(fig)
+
+###extra test for milestone 3
+def test_ridge_scatter_line_applies_line_kwargs():
+    fig, ax = plt.subplots()
+
+    x = np.array([1, 2, 3])
+    y_line = np.array([2, 4, 6])
+
+    ridge_scatter_line(
+        ax,
+        x,
+        y_line,
+        line_kwargs={"linewidth": 4, "alpha": 0.3, "label": "reg-line"},
+    )
+
+    assert len(ax.lines) == 1
+    line = ax.lines[0]
+
+    assert line.get_linewidth() == 4
+    assert line.get_alpha() == 0.3
+    assert line.get_label() == "reg-line"
+
+    plt.close(fig)
