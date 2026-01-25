@@ -20,6 +20,13 @@ import pytest
 
 from ridge_remake.get_reg_line import get_reg_line
 
+def test_non_numeric_input():
+    """Verify that non-numeric input (strings) raises a TypeError."""
+    X = np.array([["a"], ["b"], ["c"]])
+    y = np.array([1, 2, 3])
+    
+    with pytest.raises(TypeError):
+        get_reg_line(X, y)
 
 def test_perfect_linear_relationship():
     """Verify that y_pred matches y exactly in a noise-free linear system."""
