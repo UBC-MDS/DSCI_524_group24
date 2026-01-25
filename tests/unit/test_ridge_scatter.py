@@ -17,6 +17,7 @@ import matplotlib
 
 matplotlib.use("Agg") 
 import matplotlib.pyplot as plt
+import numpy as np
 import pytest
 from matplotlib.collections import PathCollection
 
@@ -53,3 +54,38 @@ def test_ridge_scatter():
 
     with pytest.raises(TypeError, match="ax"):
         ridge_scatter(None, [1, 2], [3, 4], scatter_kwargs=None)
+
+def test_ridge_scatter_input_types():
+    """
+    Verify that the function handles various array-like inputs (lists, numpy arrays)
+    and flattens them correctly using .ravel().
+    """
+    fig, ax = plt.subplots()
+    
+    # Nested lists or 2D arrays should be flattened without error
+    x_input = [[1], [2], [3]]
+    y_input = np.array([[10], [20], [30]])
+    
+    _, points = ridge_scatter(ax, x_input, y_input)
+    
+    # Resulting offsets should have shape (3, 2) representing (x, y) coordinates
+    assert points.get_offsets().shape == (3, 2)
+    
+    plt.close(fig)
+
+def test_ridge_scatter_visual_properties():
+    """
+    Verify that styling arguments in scatter_kwargs are correctly applied
+    to the resulting PathCollection.
+    """
+    fig, ax = plt.subplots()
+    
+    # Test specific visual styling: size (s) and transparency (alpha)
+    style = {"s": 50, "alpha": 0.5, "edgecolors": "red"}
+    _, points = ridge_scatter(ax, [1], [1], scatter_kwargs=style)
+    
+    # PathCollection stores sizes as an array of squares of the diameters
+    assert points.get_sizes()[0] == 50
+    assert points.get_alpha() == 0.5
+    
+    plt.close(fig)
