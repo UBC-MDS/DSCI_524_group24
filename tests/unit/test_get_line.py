@@ -62,3 +62,34 @@ def test_pandas_compatibility():
     y_pred = get_reg_line(X, y)
     assert isinstance(y_pred, np.ndarray)
     assert len(y_pred) == 3
+
+def test_mismatched_dimensions():
+    """
+    Verify that providing X and y with a different number of samples 
+    raises a ValueError during matrix multiplication.
+    """
+    # X has 3 samples, but y only has 2 samples
+    X = np.array([[1], [2], [3]])
+    y = np.array([1, 2])
+    
+    # NumPy's matrix multiplication (@) will raise ValueError due to dimension mismatch
+    with pytest.raises(ValueError):
+        get_reg_line(X, y)
+
+def test_multi_target_regression():
+    """
+    Verify that the function can handle multiple targets (y) simultaneously.
+    If y is (n_samples, n_targets), y_pred should also be (n_samples, n_targets).
+    """
+    X = np.array([[1], [2], [3]])
+    # Target 1: y = 2x, Target 2: y = 10x
+    y = np.array([[2, 10], 
+                  [4, 20], 
+                  [6, 30]])
+    
+    y_pred = get_reg_line(X, y)
+    
+    # Check if the output shape matches the multi-target input shape
+    assert y_pred.shape == (3, 2)
+    # Check if the predictions are accurate for both targets
+    np.testing.assert_allclose(y_pred, y, rtol=1e-5)
