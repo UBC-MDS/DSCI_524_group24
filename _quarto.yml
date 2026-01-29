@@ -10,6 +10,10 @@ website:
         href: index.qmd
       - text: "Reference"
         href: reference/index.qmd
+      - text: "Tutorial"
+        href: tutorial.qmd
+      - text: "Discussion"
+        href: discussion.qmd
 
 format:
   html:
