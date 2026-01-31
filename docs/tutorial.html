@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>ridge_remake.ridge_r2 – RidgeMake</title>
+<title>RidgeMake Tutorial – RidgeMake</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -57,22 +57,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-html/quarto.js"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-ddd961a2510921635943dfbbd19534c4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-ddd961a2510921635943dfbbd19534c4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -111,7 +111,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">RidgeMake</span>
     </a>
   </div>
@@ -122,19 +122,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html"> 
+    <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../reference/index.html"> 
+    <a class="nav-link" href="./reference/index.html"> 
 <span class="menu-text">Reference</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../tutorial.html"> 
+    <a class="nav-link active" href="./tutorial.html" aria-current="page"> 
 <span class="menu-text">Tutorial</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../discussion.html"> 
+    <a class="nav-link" href="./discussion.html"> 
 <span class="menu-text">Discussion</span></a>
   </li>  
 </ul>
@@ -153,20 +153,132 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#ridge_remake.ridge_remake.ridge_r2" id="toc-ridge_remake.ridge_remake.ridge_r2" class="nav-link active" data-scroll-target="#ridge_remake.ridge_remake.ridge_r2">ridge_remake.ridge_r2</a></li>
+  <li><a href="#ridgemake-workflow-tutorial" id="toc-ridgemake-workflow-tutorial" class="nav-link active" data-scroll-target="#ridgemake-workflow-tutorial">RidgeMake Workflow Tutorial</a></li>
+  <li><a href="#implementataion-example" id="toc-implementataion-example" class="nav-link" data-scroll-target="#implementataion-example">Implementataion Example</a></li>
+  <li><a href="#key-technical-considerations" id="toc-key-technical-considerations" class="nav-link" data-scroll-target="#key-technical-considerations">Key Technical Considerations</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">RidgeMake Tutorial</h1>
+</div>
 
 
 
+<div class="quarto-title-meta">
 
-<section id="ridge_remake.ridge_remake.ridge_r2" class="level1">
-<h1>ridge_remake.ridge_r2</h1>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>ridge_remake.ridge_r2()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Docstring for ridge_r2</p>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="ridgemake-workflow-tutorial" class="level2">
+<h2 class="anchored" data-anchor-id="ridgemake-workflow-tutorial">RidgeMake Workflow Tutorial</h2>
+<p>This guide provides a functional overview of a four-step workflow for performing linear regression, evaluating model performance, and visualizing results using NumPy and Matplotlib.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 28%">
+<col style="width: 25%">
+<col style="width: 46%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Function</th>
+<th>Purpose</th>
+<th>Key Mechanism</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>get_reg_line</td>
+<td>Fit &amp; Predict</td>
+<td>Uses the Normal Equation to calculate optimal weights and return predictions.</td>
+</tr>
+<tr class="even">
+<td>ridge_get_r2</td>
+<td>Evaluate</td>
+<td>Computes the R2 score to measure the proportion of variance captured by the model.</td>
+</tr>
+<tr class="odd">
+<td>ridge_scatter</td>
+<td>Visualize (Data)</td>
+<td>Plots the raw observations (x,y) onto a Matplotlib Axes object.</td>
+</tr>
+<tr class="even">
+<td>ridge_scatter_line</td>
+<td>Visualize (Model)</td>
+<td>Overlays the predicted regression line onto the existing scatter plot.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="implementataion-example" class="level2">
+<h2 class="anchored" data-anchor-id="implementataion-example">Implementataion Example</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode py code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> ridge_remake.get_reg_line <span class="im">import</span> get_reg_line</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> ridge_remake.ridge_r2 <span class="im">import</span> ridge_get_r2</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> ridge_scatter_line <span class="im">import</span> ridge_scatter_line</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> ridge_scatter <span class="im">import</span> ridge_scatter</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode py code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Generate Synthetic Data</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">42</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> <span class="dv">2</span> <span class="op">*</span> np.random.rand(<span class="dv">50</span>, <span class="dv">1</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="dv">4</span> <span class="op">+</span> <span class="dv">3</span> <span class="op">*</span> X <span class="op">+</span> np.random.randn(<span class="dv">50</span>, <span class="dv">1</span>) <span class="co"># y = 4 + 3x + noise</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode py code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Compute Predictions</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># get_reg_line handles the bias term internally via the Normal Equation</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>y_pred <span class="op">=</span> get_reg_line(X, y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode py code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Calculate Model Accuracy</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>r2_score <span class="op">=</span> ridge_get_r2(y, y_pred)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Model R² Score: </span><span class="sc">{</span>r2_score<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Model R² Score: 0.7683</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode py code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Visualization</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">5</span>))</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot raw data</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>ridge_scatter(ax, X, y, label<span class="op">=</span><span class="st">"Observed Data"</span>, scatter_kwargs<span class="op">=</span>{<span class="st">"color"</span>: <span class="st">"blue"</span>, <span class="st">"alpha"</span>: <span class="fl">0.6</span>})</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/raw-scatter.png" class="img-fluid figure-img" style="width:30.0%"></p>
+<figcaption>Raw Scatter Plot</figcaption>
+</figure>
+</div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode py code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot regression line</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>ridge_scatter_line(ax, X, y_pred, label<span class="op">=</span><span class="ss">f"Regression Line (R²=</span><span class="sc">{</span>r2_score<span class="sc">:.2f}</span><span class="ss">)"</span>, </span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>                   line_kwargs<span class="op">=</span>{<span class="st">"color"</span>: <span class="st">"red"</span>, <span class="st">"linewidth"</span>: <span class="dv">2</span>})</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">"Independent Variable (X)"</span>)</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">"Target (y)"</span>)</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">"Simple Linear Regression Fit"</span>)</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>ax.legend()</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/scatter-with-line.png" class="img-fluid figure-img" style="width:30.0%"></p>
+<figcaption>Scatter Plot With Line</figcaption>
+</figure>
+</div>
+</section>
+<section id="key-technical-considerations" class="level2">
+<h2 class="anchored" data-anchor-id="key-technical-considerations">Key Technical Considerations</h2>
+<p>Matrix Operations: <code>get_reg_line</code> relies on <code>np.linalg.inv</code>. Note that for high-dimensional data or collinear features, the matrix XTX may be singular (non-invertible).</p>
+<p>The Bias Term: The prediction function automatically prepends a column of ones to the input matrix. This ensures the model accounts for the intercept (β0​), preventing the line from being forced through the origin.</p>
+<p>Sorting for Plots: ridge_scatter_line includes a sort_x=True parameter. This is critical when working with shuffled data; without it, Matplotlib connects points in their index order, resulting in a “zig-zag” mess rather than a clean line.</p>
+<p>R2 Interpretation:</p>
+<ul>
+<li><p>1.0: Perfect fit.</p></li>
+<li><p>0.0: Model predicts no better than the mean of y.</p></li>
+<li><p>Negative: The model is worse than simply predicting the mean (usually indicates a non-linear trend or severe overfit on training data).</p></li>
+</ul>
 
 
 </section>
