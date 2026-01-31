@@ -246,6 +246,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot raw data</span></span>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>ridge_scatter(ax, X, y, label<span class="op">=</span><span class="st">"Observed Data"</span>, scatter_kwargs<span class="op">=</span>{<span class="st">"color"</span>: <span class="st">"blue"</span>, <span class="st">"alpha"</span>: <span class="fl">0.6</span>})</span>
 <span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/raw-scatter.png" class="img-fluid figure-img" style="width:30.0%"></p>
+<figcaption>Raw Scatter Plot</figcaption>
+</figure>
+</div>
 <div class="sourceCode" id="cb6"><pre class="sourceCode py code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot regression line</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>ridge_scatter_line(ax, X, y_pred, label<span class="op">=</span><span class="ss">f"Regression Line (R²=</span><span class="sc">{</span>r2_score<span class="sc">:.2f}</span><span class="ss">)"</span>, </span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>                   line_kwargs<span class="op">=</span>{<span class="st">"color"</span>: <span class="st">"red"</span>, <span class="st">"linewidth"</span>: <span class="dv">2</span>})</span>
@@ -255,6 +261,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">"Simple Linear Regression Fit"</span>)</span>
 <span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>ax.legend()</span>
 <span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/scatter-with-line.png" class="img-fluid figure-img" style="width:30.0%"></p>
+<figcaption>Scatter Plot With Line</figcaption>
+</figure>
+</div>
 </section>
 <section id="key-technical-considerations" class="level2">
 <h2 class="anchored" data-anchor-id="key-technical-considerations">Key Technical Considerations</h2>

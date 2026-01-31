@@ -55,7 +55,7 @@ ridge_scatter(ax, X, y, label="Observed Data", scatter_kwargs={"color": "blue", 
 plt.show()
 ```
 
-![Raw Scatter Plot](img/raw-scatter.png){width=30%}
+![Raw Scatter Plot](img/raw-scatter.png){width=50%}
 
 ```py
 # Plot regression line
@@ -69,7 +69,7 @@ ax.legend()
 plt.show()
 ```
 
-![Scatter Plot With Line](img/scatter-with-line.png){width=30%}
+![Scatter Plot With Line](img/scatter-with-line.png){width=50%}
 
 ## Key Technical Considerations
 
