@@ -16,7 +16,7 @@ This guide provides a functional overview of a four-step workflow for performing
 
 ## Implementataion Example
 
-```{py}
+```py
 import numpy as np
 import matplotlib.pyplot as plt
 from ridge_remake.get_reg_line import get_reg_line
