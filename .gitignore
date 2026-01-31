@@ -1,3 +1,5 @@
+src/ridge_remake/__version__.py
+
 ### Linux template
 *~
 
@@ -245,3 +247,9 @@ cython_debug/
 _version.py
 
 /.quarto/
+
+
+# Ruff Cache
+.ruff_cache/
+
+test.ipynb

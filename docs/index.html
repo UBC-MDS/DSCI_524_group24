@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -38,7 +72,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-6bd9cfa162949bde0a231f530c97869d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-f3c7dabe75a0c4d0cadd41566b53a9a4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -95,6 +129,14 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link" href="./reference/index.html"> 
 <span class="menu-text">Reference</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./tutorial.html"> 
+<span class="menu-text">Tutorial</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./discussion.html"> 
+<span class="menu-text">Discussion</span></a>
+  </li>  
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
@@ -111,7 +153,37 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#quick-start" id="toc-quick-start" class="nav-link active" data-scroll-target="#quick-start">Quick start</a></li>
+  <li><a href="#what-this-package-does" id="toc-what-this-package-does" class="nav-link active" data-scroll-target="#what-this-package-does"><span class="header-section-number">1</span> What this package does</a></li>
+  <li><a href="#install" id="toc-install" class="nav-link" data-scroll-target="#install"><span class="header-section-number">2</span> Install</a></li>
+  <li><a href="#quick-start-copypaste" id="toc-quick-start-copypaste" class="nav-link" data-scroll-target="#quick-start-copypaste"><span class="header-section-number">3</span> Quick start (copy/paste)</a></li>
+  <li><a href="#function1" id="toc-function1" class="nav-link" data-scroll-target="#function1"><span class="header-section-number">4</span> Function1</a>
+  <ul class="collapse">
+  <li><a href="#what-it-does" id="toc-what-it-does" class="nav-link" data-scroll-target="#what-it-does"><span class="header-section-number">4.1</span> What it does</a></li>
+  <li><a href="#docstring-from-the-package" id="toc-docstring-from-the-package" class="nav-link" data-scroll-target="#docstring-from-the-package"><span class="header-section-number">4.2</span> Docstring (from the package)</a></li>
+  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example"><span class="header-section-number">4.3</span> Example</a></li>
+  <li><a href="#common-pitfalls" id="toc-common-pitfalls" class="nav-link" data-scroll-target="#common-pitfalls"><span class="header-section-number">4.4</span> Common pitfalls</a></li>
+  </ul></li>
+  <li><a href="#function-2" id="toc-function-2" class="nav-link" data-scroll-target="#function-2"><span class="header-section-number">5</span> Function 2</a>
+  <ul class="collapse">
+  <li><a href="#what-it-does-1" id="toc-what-it-does-1" class="nav-link" data-scroll-target="#what-it-does-1"><span class="header-section-number">5.1</span> What it does</a></li>
+  <li><a href="#docstring-from-the-package-1" id="toc-docstring-from-the-package-1" class="nav-link" data-scroll-target="#docstring-from-the-package-1"><span class="header-section-number">5.2</span> Docstring (from the package)</a></li>
+  <li><a href="#example-1" id="toc-example-1" class="nav-link" data-scroll-target="#example-1"><span class="header-section-number">5.3</span> Example</a></li>
+  <li><a href="#common-pitfalls-1" id="toc-common-pitfalls-1" class="nav-link" data-scroll-target="#common-pitfalls-1"><span class="header-section-number">5.4</span> Common pitfalls</a></li>
+  </ul></li>
+  <li><a href="#function-3" id="toc-function-3" class="nav-link" data-scroll-target="#function-3"><span class="header-section-number">6</span> Function 3</a>
+  <ul class="collapse">
+  <li><a href="#what-it-does-2" id="toc-what-it-does-2" class="nav-link" data-scroll-target="#what-it-does-2"><span class="header-section-number">6.1</span> What it does</a></li>
+  <li><a href="#recommended-usage-pattern" id="toc-recommended-usage-pattern" class="nav-link" data-scroll-target="#recommended-usage-pattern"><span class="header-section-number">6.2</span> Recommended usage pattern</a></li>
+  <li><a href="#example-2" id="toc-example-2" class="nav-link" data-scroll-target="#example-2"><span class="header-section-number">6.3</span> Example</a></li>
+  <li><a href="#common-pitfalls-2" id="toc-common-pitfalls-2" class="nav-link" data-scroll-target="#common-pitfalls-2"><span class="header-section-number">6.4</span> Common pitfalls</a></li>
+  </ul></li>
+  <li><a href="#function-4" id="toc-function-4" class="nav-link" data-scroll-target="#function-4"><span class="header-section-number">7</span> Function 4</a>
+  <ul class="collapse">
+  <li><a href="#what-it-does-3" id="toc-what-it-does-3" class="nav-link" data-scroll-target="#what-it-does-3"><span class="header-section-number">7.1</span> What it does</a></li>
+  <li><a href="#example-3" id="toc-example-3" class="nav-link" data-scroll-target="#example-3"><span class="header-section-number">7.2</span> Example</a></li>
+  <li><a href="#common-pitfalls-3" id="toc-common-pitfalls-3" class="nav-link" data-scroll-target="#common-pitfalls-3"><span class="header-section-number">7.3</span> Common pitfalls</a></li>
+  </ul></li>
+  <li><a href="#how-do-i-explore-more" id="toc-how-do-i-explore-more" class="nav-link" data-scroll-target="#how-do-i-explore-more"><span class="header-section-number">8</span> “How do I explore more?”</a></li>
   </ul>
 </nav>
     </div>
@@ -121,6 +193,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">RidgeMake</h1>
+<p class="subtitle lead">A lightweight regression + plotting toolkit (line fit, scatter, overlay line, and R²).</p>
 </div>
 
 
@@ -137,13 +210,240 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>RidgeMake is a lightweight regression and visualization package for fitting a line to paired data, plotting points, overlaying the fitted line, and reporting an R² score.</p>
-<section id="quick-start" class="level2">
-<h2 class="anchored" data-anchor-id="quick-start">Quick start</h2>
-<p>#| eval: false from ridge_remake import get_reg_line, ridge_scatter, ridge_scatter_line, ridge_get_r2</p>
-<p>x = [1, 2, 3, 4, 5] y = [2, 4, 5, 4, 5]</p>
-<p>line = get_reg_line(x, y) fig = ridge_scatter(x, y) fig = ridge_scatter_line(fig, line)</p>
-<p>r2 = ridge_get_r2(x, y) print(“R2:”, r2)</p>
+<section id="what-this-package-does" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="what-this-package-does"><span class="header-section-number">1</span> What this package does</h2>
+<p>RidgeMake helps you do one simple workflow:</p>
+<ol type="1">
+<li>Fit a straight line to paired data (x, y)</li>
+<li>Plot the points</li>
+<li>Overlay the fitted line</li>
+<li>Report an R² score</li>
+</ol>
+<p>It’s designed for users with minimal Python experience: you provide arrays, and you get back predictions + a Matplotlib plot.</p>
+<hr>
+</section>
+<section id="install" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="install"><span class="header-section-number">2</span> Install</h2>
+<p>If you are developing locally:</p>
+<pre class="{bash}"><code>pip install -e .</code></pre>
+<p>If you are installing from a released package (example):</p>
+<pre class="{bash}"><code>pip install ridge_remake</code></pre>
+<hr>
+</section>
+<section id="quick-start-copypaste" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="quick-start-copypaste"><span class="header-section-number">3</span> Quick start (copy/paste)</h2>
+<div id="9e8be8d6" class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># If your package exports these at the top-level:</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># from ridge_remake import get_reg_line, ridge_scatter, ridge_scatter_line, ridge_get_r2</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co"># If not, import from the module files:</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> ridge_remake.get_reg_line <span class="im">import</span> get_reg_line</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> ridge_remake.ridge_scatter <span class="im">import</span> ridge_scatter</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> ridge_remake.ridge_scatter_line <span class="im">import</span> ridge_scatter_line</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> ridge_remake.ridge_r2 <span class="im">import</span> ridge_get_r2</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Example data</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>], dtype<span class="op">=</span><span class="bu">float</span>)</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> np.array([<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">5</span>], dtype<span class="op">=</span><span class="bu">float</span>)</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="co"># 1) Fit predictions on the training x</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> x.reshape(<span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>)          <span class="co"># make it 2D for the regression math</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>y_pred <span class="op">=</span> get_reg_line(X, y)</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="co"># 2) Plot scatter</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots()</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>ax, _ <span class="op">=</span> ridge_scatter(ax, x, y, scatter_kwargs<span class="op">=</span>{<span class="st">"alpha"</span>: <span class="fl">0.8</span>}, label<span class="op">=</span><span class="st">"data"</span>)</span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a><span class="co"># 3) Overlay fitted line (sort x so the line looks clean)</span></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>order <span class="op">=</span> np.argsort(x)</span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>x_line <span class="op">=</span> x[order]</span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>y_line <span class="op">=</span> y_pred[order]</span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>ax, _ <span class="op">=</span> ridge_scatter_line(ax, x_line, y_line, line_kwargs<span class="op">=</span>{<span class="st">"linewidth"</span>: <span class="dv">2</span>}, label<span class="op">=</span><span class="st">"fit"</span>)</span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a><span class="co"># 4) R² score</span></span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>r2 <span class="op">=</span> ridge_get_r2(y_true<span class="op">=</span>y, y_pred<span class="op">=</span>y_pred)</span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="ss">f"RidgeMake demo (R² = </span><span class="sc">{</span>r2<span class="sc">:.3f}</span><span class="ss">)"</span>)</span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>ax.legend()</span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<hr>
+</section>
+<section id="function1" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="function1"><span class="header-section-number">4</span> Function1</h2>
+<p><code>get_reg_line(X_train, y_train)</code></p>
+<section id="what-it-does" class="level3" data-number="4.1">
+<h3 data-number="4.1" class="anchored" data-anchor-id="what-it-does"><span class="header-section-number">4.1</span> What it does</h3>
+<p>Computes linear regression predictions using a least-squares (normal equation) fit, then returns predicted values for the input <code>X_train</code>.</p>
+</section>
+<section id="docstring-from-the-package" class="level3" data-number="4.2">
+<h3 data-number="4.2" class="anchored" data-anchor-id="docstring-from-the-package"><span class="header-section-number">4.2</span> Docstring (from the package)</h3>
+<p>Compute linear regression predictions for the provided training data.</p>
+<p>Parameters - X_train: array-like or pd.DataFrame of shape (n_samples, n_features) - y_train: array-like or pd.DataFrame of shape (n_samples,) or (n_samples, n_targets)</p>
+<p>Returns - y_pred: ndarray of shape (n_samples,) or (n_samples, n_targets)</p>
+</section>
+<section id="example" class="level3" data-number="4.3">
+<h3 data-number="4.3" class="anchored" data-anchor-id="example"><span class="header-section-number">4.3</span> Example</h3>
+<div id="e2d9d02f" class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> ridge_remake.get_reg_line <span class="im">import</span> get_reg_line</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>], dtype<span class="op">=</span><span class="bu">float</span>)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> np.array([<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">5</span>], dtype<span class="op">=</span><span class="bu">float</span>)</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> x.reshape(<span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>)</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>y_pred <span class="op">=</span> get_reg_line(X, y)</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(y_pred)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="common-pitfalls" class="level3" data-number="4.4">
+<h3 data-number="4.4" class="anchored" data-anchor-id="common-pitfalls"><span class="header-section-number">4.4</span> Common pitfalls</h3>
+<ul>
+<li><code>X_train</code> must be 2D (use <code>x.reshape(-1, 1)</code> if you only have one feature).</li>
+<li><code>X_train</code> and <code>y_train</code> must have the same number of rows/samples.</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="function-2" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="function-2"><span class="header-section-number">5</span> Function 2</h2>
+<p><code>ridge_scatter(ax, x, y, *, scatter_kwargs=None, label=None)</code></p>
+<section id="what-it-does-1" class="level3" data-number="5.1">
+<h3 data-number="5.1" class="anchored" data-anchor-id="what-it-does-1"><span class="header-section-number">5.1</span> What it does</h3>
+<p>Draws a scatter plot on an existing Matplotlib <code>Axes</code>. This function only plots points; it does not fit or draw a line.</p>
+</section>
+<section id="docstring-from-the-package-1" class="level3" data-number="5.2">
+<h3 data-number="5.2" class="anchored" data-anchor-id="docstring-from-the-package-1"><span class="header-section-number">5.2</span> Docstring (from the package)</h3>
+<p>Create a scatter plot on a provided Matplotlib Axes object. This function is the base plotting function for the ridge regression visualization workflow. It draws the raw data points (x, y) on the provided Axes.</p>
+<p>Parameters - ax: matplotlib.axes.Axes - x: array-like (n_samples,) - y: array-like (n_samples,) - scatter_kwargs: dict, optional (passed to <code>ax.scatter(...)</code>) - label: str, optional</p>
+<p>Returns - ax: the same axes (with points added) - points: the scatter artist</p>
+</section>
+<section id="example-1" class="level3" data-number="5.3">
+<h3 data-number="5.3" class="anchored" data-anchor-id="example-1"><span class="header-section-number">5.3</span> Example</h3>
+<div id="dd7e86bb" class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> ridge_remake.ridge_scatter <span class="im">import</span> ridge_scatter</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>], dtype<span class="op">=</span><span class="bu">float</span>)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> np.array([<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">5</span>], dtype<span class="op">=</span><span class="bu">float</span>)</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots()</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>ax, points <span class="op">=</span> ridge_scatter(ax, x, y, scatter_kwargs<span class="op">=</span>{<span class="st">"alpha"</span>: <span class="fl">0.8</span>}, label<span class="op">=</span><span class="st">"data"</span>)</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>ax.legend()</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="common-pitfalls-1" class="level3" data-number="5.4">
+<h3 data-number="5.4" class="anchored" data-anchor-id="common-pitfalls-1"><span class="header-section-number">5.4</span> Common pitfalls</h3>
+<ul>
+<li>You must pass a real Matplotlib <code>Axes</code> object (created by <code>plt.subplots()</code>).</li>
+<li><code>x</code> and <code>y</code> must be numeric, non-empty, and the same length.</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="function-3" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="function-3"><span class="header-section-number">6</span> Function 3</h2>
+<p><code>ridge_scatter_line(ax, x_line, y_line, *, line_kwargs=None, label=None)</code></p>
+<section id="what-it-does-2" class="level3" data-number="6.1">
+<h3 data-number="6.1" class="anchored" data-anchor-id="what-it-does-2"><span class="header-section-number">6.1</span> What it does</h3>
+<p>Overlays a line on an existing Matplotlib <code>Axes</code>. You provide the line coordinates (<code>x_line</code>, <code>y_line</code>). This function does not compute the regression line—it only draws it.</p>
+</section>
+<section id="recommended-usage-pattern" class="level3" data-number="6.2">
+<h3 data-number="6.2" class="anchored" data-anchor-id="recommended-usage-pattern"><span class="header-section-number">6.2</span> Recommended usage pattern</h3>
+<ol type="1">
+<li>Compute predictions first (using <code>get_reg_line</code>)</li>
+<li>Sort <code>x</code> so the line doesn’t zig-zag</li>
+<li>Call <code>ridge_scatter_line(ax, x_sorted, y_pred_sorted, ...)</code></li>
+</ol>
+</section>
+<section id="example-2" class="level3" data-number="6.3">
+<h3 data-number="6.3" class="anchored" data-anchor-id="example-2"><span class="header-section-number">6.3</span> Example</h3>
+<div id="181c8285" class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> ridge_remake.get_reg_line <span class="im">import</span> get_reg_line</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> ridge_remake.ridge_scatter <span class="im">import</span> ridge_scatter</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> ridge_remake.ridge_scatter_line <span class="im">import</span> ridge_scatter_line</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.array([<span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">2</span>, <span class="dv">4</span>], dtype<span class="op">=</span><span class="bu">float</span>)</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> np.array([<span class="dv">5</span>, <span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">4</span>], dtype<span class="op">=</span><span class="bu">float</span>)</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> x.reshape(<span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>)</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>y_pred <span class="op">=</span> get_reg_line(X, y)</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots()</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>ax, _ <span class="op">=</span> ridge_scatter(ax, x, y)</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>order <span class="op">=</span> np.argsort(x)</span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>x_line <span class="op">=</span> x[order]</span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>y_line <span class="op">=</span> y_pred[order]</span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>ax, line <span class="op">=</span> ridge_scatter_line(ax, x_line, y_line, line_kwargs<span class="op">=</span>{<span class="st">"linewidth"</span>: <span class="dv">2</span>}, label<span class="op">=</span><span class="st">"fit"</span>)</span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>ax.legend()</span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="common-pitfalls-2" class="level3" data-number="6.4">
+<h3 data-number="6.4" class="anchored" data-anchor-id="common-pitfalls-2"><span class="header-section-number">6.4</span> Common pitfalls</h3>
+<ul>
+<li><code>x_line</code> and <code>y_line</code> must be the same length.</li>
+<li>Sort <code>x_line</code> before plotting, or your line may look “scrambled”.</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="function-4" class="level2" data-number="7">
+<h2 data-number="7" class="anchored" data-anchor-id="function-4"><span class="header-section-number">7</span> Function 4</h2>
+<p><code>ridge_get_r2(y_true, y_pred)</code></p>
+<section id="what-it-does-3" class="level3" data-number="7.1">
+<h3 data-number="7.1" class="anchored" data-anchor-id="what-it-does-3"><span class="header-section-number">7.1</span> What it does</h3>
+<p>Computes the coefficient of determination (R²). This tells you how well your predicted values explain the variation in the true values.</p>
+<ul>
+<li>R² = 1 means perfect predictions</li>
+<li>R² = 0 means “no better than predicting the mean”</li>
+<li>R² &lt; 0 means worse than predicting the mean</li>
+</ul>
+</section>
+<section id="example-3" class="level3" data-number="7.2">
+<h3 data-number="7.2" class="anchored" data-anchor-id="example-3"><span class="header-section-number">7.2</span> Example</h3>
+<div id="7e862824" class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> ridge_remake.get_reg_line <span class="im">import</span> get_reg_line</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> ridge_remake.ridge_r2 <span class="im">import</span> ridge_get_r2</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>], dtype<span class="op">=</span><span class="bu">float</span>)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> np.array([<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">5</span>], dtype<span class="op">=</span><span class="bu">float</span>)</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>y_pred <span class="op">=</span> get_reg_line(x.reshape(<span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>), y)</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>r2 <span class="op">=</span> ridge_get_r2(y_true<span class="op">=</span>y, y_pred<span class="op">=</span>y_pred)</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(r2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="common-pitfalls-3" class="level3" data-number="7.3">
+<h3 data-number="7.3" class="anchored" data-anchor-id="common-pitfalls-3"><span class="header-section-number">7.3</span> Common pitfalls</h3>
+<ul>
+<li><code>y_true</code> and <code>y_pred</code> must be the same shape and aligned to the same observations.</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="how-do-i-explore-more" class="level2" data-number="8">
+<h2 data-number="8" class="anchored" data-anchor-id="how-do-i-explore-more"><span class="header-section-number">8</span> “How do I explore more?”</h2>
+<ul>
+<li>Go to the <strong>Reference</strong> tab in the navbar to see the auto-generated API docs from docstrings.</li>
+<li>Copy the examples above and change:
+<ul>
+<li>your <code>x</code> and <code>y</code></li>
+<li>point style (<code>scatter_kwargs</code>)</li>
+<li>line style (<code>line_kwargs</code>)</li>
+<li>number of points / range of values</li>
+</ul></li>
+</ul>
+<p>If you can run the Quick start successfully, you can run everything in this package.</p>
 
 
 </section>
