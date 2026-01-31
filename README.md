@@ -26,10 +26,17 @@ conda activate group-24-524
 ```
 
 ### (3) Install the package
-From the repo root:
+
+If you are developing locally:
 
 ```bash
 pip install -e .
+```
+
+If you are installing from a released package (example):
+
+```bash
+pip install ridge_remake
 ```
 
 ## Running tests
@@ -72,7 +79,8 @@ git push origin main
 
 ### (3) View the deployed site
 
-After the workflow finishes, the site will be available at the repository’s GitHub Pages URL.
+After the workflow finishes, the site will be available at the repository’s GitHub Pages URL:
+https://ubc-mds.github.io/DSCI_524_group24/
 
 
 ## Contributors
