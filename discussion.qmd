@@ -2,4 +2,14 @@
 title: "Discussion"
 ---
 
-# Placeholder
+# Teamwork Reflection
+
+This project was a good introduction to the world of CI/CD. Usage of Github projects and workflows was incredibly useful, and given the opportunity to do this again, we would start with this tool from the beginning.
+
+Another tool we found useful was gitflow- creating the development branch and only pushing to main once the tag was ready to be created. This helped us set up robust workflows that would immediately run on push to main, ensuring that all code coverage tests and tag generation steps were fully automated. As well, this helped prevent spurious workflow runs. For example, a simple fix to documentation should not warrant a new version creation, so pushing it to development prevents the workflows from being run. Only push to main when we feel comfortable with the code.
+
+A tool that we would use better is a linter, especially ruff for basic linting and testing. This helped with code debugging as well as in the CI phase to prevent small issues from cascading and preventing workflows from being run.
+
+Overall, this served as a good introduction to the tools available for the CI/CD workflow and we are better armed to tackle these problems in the future.
+
+- Team 24

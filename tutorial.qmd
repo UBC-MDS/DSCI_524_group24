@@ -23,26 +23,39 @@ from ridge_remake.get_reg_line import get_reg_line
 from ridge_remake.ridge_r2 import ridge_get_r2
 from ridge_scatter_line import ridge_scatter_line
 from ridge_scatter import ridge_scatter
+```
 
+```py
 # 1. Generate Synthetic Data
 np.random.seed(42)
 X = 2 * np.random.rand(50, 1)
 y = 4 + 3 * X + np.random.randn(50, 1) # y = 4 + 3x + noise
+```
 
+```py
 # 2. Compute Predictions
 # get_reg_line handles the bias term internally via the Normal Equation
 y_pred = get_reg_line(X, y)
+```
 
+```py
 # 3. Calculate Model Accuracy
 r2_score = ridge_get_r2(y, y_pred)
 print(f"Model R² Score: {r2_score:.4f}")
+```
+Model R² Score: 0.7683
 
+
+```py
 # 4. Visualization
 fig, ax = plt.subplots(figsize=(8, 5))
 
 # Plot raw data
 ridge_scatter(ax, X, y, label="Observed Data", scatter_kwargs={"color": "blue", "alpha": 0.6})
+plt.show()
+```
 
+```py
 # Plot regression line
 ridge_scatter_line(ax, X, y_pred, label=f"Regression Line (R²={r2_score:.2f})", 
                    line_kwargs={"color": "red", "linewidth": 2})

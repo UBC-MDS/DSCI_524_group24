@@ -26,5 +26,12 @@
     "title": "RidgeMake Tutorial",
     "section": "Key Technical Considerations",
     "text": "Key Technical Considerations\nMatrix Operations: get_reg_line relies on np.linalg.inv. Note that for high-dimensional data or collinear features, the matrix XTX may be singular (non-invertible).\nThe Bias Term: The prediction function automatically prepends a column of ones to the input matrix. This ensures the model accounts for the intercept (β0​), preventing the line from being forced through the origin.\nSorting for Plots: ridge_scatter_line includes a sort_x=True parameter. This is critical when working with shuffled data; without it, Matplotlib connects points in their index order, resulting in a “zig-zag” mess rather than a clean line.\nR2 Interpretation:\n\n1.0: Perfect fit.\n0.0: Model predicts no better than the mean of y.\nNegative: The model is worse than simply predicting the mean (usually indicates a non-linear trend or severe overfit on training data)."
+  },
+  {
+    "objectID": "discussion.html",
+    "href": "discussion.html",
+    "title": "Discussion",
+    "section": "",
+    "text": "Teamwork Reflection\nThis project was a good introduction to the world of CI/CD. Usage of Github projects and workflows was incredibly useful, and given the opportunity to do this again, we would start with this tool from the beginning.\nAnother tool we found useful was gitflow- creating the development branch and only pushing to main once the tag was ready to be created. This helped us set up robust workflows that would immediately run on push to main, ensuring that all code coverage tests and tag generation steps were fully automated. As well, this helped prevent spurious workflow runs. For example, a simple fix to documentation should not warrant a new version creation, so pushing it to development prevents the workflows from being run. Only push to main when we feel comfortable with the code.\nA tool that we would use better is a linter, especially ruff for basic linting and testing. This helped with code debugging as well as in the CI phase to prevent small issues from cascading and preventing workflows from being run.\nOverall, this served as a good introduction to the tools available for the CI/CD workflow and we are better armed to tackle these problems in the future.\n\nTeam 24"
   }
 ]
