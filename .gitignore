@@ -247,3 +247,7 @@ cython_debug/
 _version.py
 
 /.quarto/
+
+
+# Ruff Cache
+.ruff_cache/
