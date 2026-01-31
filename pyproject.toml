@@ -18,6 +18,9 @@ version = "0.1.1"
 description = "remake of the ridge function"
 authors = [
     { name = "suryash chakravarty", email = "suryash.c@gmail.com" },
+    { name = "Seungmyun Park", email = "eden.parkdev@protonmail.com" },
+    { name = "Jingyi Zha", email = "serenezhaaa@gmail.com" },
+    { name = "Yuexiang Ni", email = "" }
 ]
 license = "MIT"
 requires-python = ">= 3.10" # Adjust based on the minimum version of Python that you support
