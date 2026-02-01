@@ -41,9 +41,11 @@ jobs:
         run: |
           quarto render
 
-      - name: Publish to gh-pages branch
-        uses: quarto-dev/quarto-actions/publish@v2
+      - name: Deploy to gh-pages (keep PR previews)
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          target: gh-pages
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          branch: gh-pages
+          folder: _site
+          clean: true
+          clean-exclude: |
+            pr-preview/**
