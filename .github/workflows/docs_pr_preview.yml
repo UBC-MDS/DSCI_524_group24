@@ -46,7 +46,7 @@ jobs:
       - name: Deploy preview to gh-pages + comment link on PR
         uses: rossjrw/pr-preview-action@v1
         with:
-          source-dir: _site
+          source-dir: docs
           preview-branch: gh-pages
           umbrella-dir: pr-preview
           wait-for-pages-deployment: true
