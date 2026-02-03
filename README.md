@@ -76,6 +76,12 @@ From the repo root:
 pytest -q
 ```
 
+If you are installing from a released package (example):
+
+```bash
+pip install ridge_remake
+```
+
 ## Building documentation locally
 
 ### Generate docs locally
@@ -111,7 +117,8 @@ git push origin main
 
 ### (3) View the deployed site
 
-After the workflow finishes, the site will be available at the repository’s GitHub Pages URL.
+After the workflow finishes, the site will be available at the repository’s GitHub Pages URL:
+https://ubc-mds.github.io/DSCI_524_group24/
 
 ## Contributors
 
