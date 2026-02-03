@@ -34,36 +34,36 @@ Ready to contribute? Here's how to set up ridge_remake for
 local development.
 
 1. Fork the https://github.com/UBC-MDS/DSCI_524_group24 repository on GitHub.
-2. Clone your fork locally (*if you want to work locally*)
+2. Clone your fork locally (_if you want to work locally_)
 
-    ```shell
-    git clone git@github.com:your_name_here/ridge_remake.git
-    ```
+   ```shell
+   git clone git@github.com:your_name_here/ridge_remake.git
+   ```
 
 3. [Install hatch](https://hatch.pypa.io/latest/install/).
 
 4. Create a Branch Create a branch for local development using main as a starting point.
 
-    ```shell
-    git checkout main
-    git checkout -b fix-name-of-your-bugfix
-    ```
+   ```shell
+   git checkout main
+   git checkout -b fix-name-of-your-bugfix
+   ```
 
-    Now you can make your changes locally.
+   Now you can make your changes locally.
 
 5. Test Your Changes When you're done making changes, use hatch to run the test suite and quality assurance tools.
 
-    ```shell
-    hatch run test:run
-    ```
+   ```shell
+   hatch run test:run
+   ```
 
 6. Commit your changes and push your branch to GitHub. Please use [semantic commit messages](https://www.conventionalcommits.org/).
 
-    ```shell
-    git add .
-    git commit -m "fix: summarize your changes"
-    git push -u origin fix-name-of-your-bugfix
-    ```
+   ```shell
+   git add .
+   git commit -m "fix: summarize your changes"
+   git push -u origin fix-name-of-your-bugfix
+   ```
 
 7. Open the link displayed in the message when pushing your new branch in order to submit a pull request.
 
@@ -76,6 +76,28 @@ Before you submit a pull request, check that it meets these guidelines:
    new functionality into a function with a docstring.
 3. Your pull request will automatically be checked by the full test suite.
    It needs to pass all of them before it can be considered for merging.
+
+## Development tools and project practices
+
+This project applies several development tools, GitHub infrastructures, and organizational practices introduced in the DSCI 524 course.
+
+We use GitHub Issues to track bugs, feature requests, and documentation tasks, which helps organize development work and prioritize contributions. All code changes are submitted through pull requests and reviewed before being merged, following a collaborative development workflow.
+
+Automated testing is performed using `pytest`, and continuous integration is implemented through GitHub Actions to ensure that all tests pass on every pull request and push to the main branch. This helps maintain code quality and prevents regressions.
+
+The package documentation is built using Quarto and quartodoc, and is automatically deployed to GitHub Pages via GitHub Actions. This enables reproducible and up-to-date documentation to be published directly from the repository.
+
+Environment management is handled using a reproducible environment specification file, allowing contributors to easily recreate the development environment.
+
+These tools and practices reflect the software engineering and reproducibility principles emphasized in the course, including automation, testing, documentation, and transparent collaboration.
+
+### Scaling considerations
+
+If this project were to scale to a larger team or a production-level package, we would further adopt additional tools and practices such as code coverage reporting, automated linting and formatting (e.g., ruff or black), dependency update automation (e.g., Dependabot), and release automation with versioned package publishing.
+
+For larger datasets or more computationally intensive workflows, we would also consider using containerization (e.g., Docker) and more advanced CI workflows to ensure consistent execution environments across different platforms.
+
+These tools and practices would improve maintainability, reliability, and collaboration as the project grows.
 
 ## Code of conduct
 
