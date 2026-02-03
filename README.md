@@ -4,10 +4,45 @@ RidgeMake is a lightweight, user-friendly regression and visualization package d
 
 ## Features
 
--   `get_reg_line`: Calculate slope and intercept of the regression line
--   `ridge_scatter`: Visualize your data points
--   `ridge_scatter_line`: Plot the fitted line on the chart
--   `ridge_get_r2`: Evaluate model performance with R² metric
+- `get_reg_line`: Calculate slope and intercept of the regression line
+- `ridge_scatter`: Visualize your data points
+- `ridge_scatter_line`: Plot the fitted line on the chart
+- `ridge_get_r2`: Evaluate model performance with R² metric
+
+## Quick example
+
+```python
+import numpy as np
+from ridgemake import (
+    get_reg_line,
+    ridge_scatter,
+    ridge_scatter_line,
+    ridge_get_r2
+)
+
+# Example paired data
+x = np.array([1, 2, 3, 4, 5])
+y = np.array([2, 4, 5, 4, 6])
+
+# Fit regression line
+slope, intercept = get_reg_line(x, y)
+
+# Compute R^2
+r2 = ridge_get_r2(x, y, slope, intercept)
+print(f"Slope: {slope:.3f}, Intercept: {intercept:.3f}, R^2: {r2:.3f}")
+
+# Visualize
+ridge_scatter(x, y)
+ridge_scatter_line(x, y, slope, intercept)
+```
+
+## Performance expectations and limitations
+
+RidgeMake is intended for educational use and small-to-medium sized datasets.
+
+The package is designed for simple linear regression on paired numeric data and prioritizes clarity and ease of use over computational efficiency. It is suitable for classroom demonstrations, quick exploratory analysis, and small experiments.
+
+RidgeMake does not support large-scale datasets, high-dimensional data, or advanced regression techniques (e.g., regularization, multivariate regression, or model diagnostics). For production-level workflows or large datasets, users should consider more specialized libraries such as scikit-learn or statsmodels.
 
 ## Developer setup
 
@@ -27,16 +62,10 @@ conda activate group-24-524
 
 ### (3) Install the package
 
-If you are developing locally:
+From the repo root:
 
 ```bash
 pip install -e .
-```
-
-If you are installing from a released package (example):
-
-```bash
-pip install ridge_remake
 ```
 
 ## Running tests
@@ -50,7 +79,9 @@ pytest -q
 ## Building documentation locally
 
 ### Generate docs locally
+
 From the repo root, run:
+
 ```bash
 quartodoc build
 ```
@@ -66,6 +97,7 @@ Documentation deployment is automated via GitHub Actions on pushes to `main`.
 ### (1) Ensure GitHub Pages is configured
 
 On GitHub:
+
 - Repository Settings → Pages
 - Set Source to GitHub Actions
 
@@ -79,13 +111,11 @@ git push origin main
 
 ### (3) View the deployed site
 
-After the workflow finishes, the site will be available at the repository’s GitHub Pages URL:
-https://ubc-mds.github.io/DSCI_524_group24/
-
+After the workflow finishes, the site will be available at the repository’s GitHub Pages URL.
 
 ## Contributors
 
--   Yue Xiang Ni
--   Suryash Chakravarty
--   Seungmyun Park
--   Jingyi Zha
+- Yue Xiang Ni
+- Suryash Chakravarty
+- Seungmyun Park
+- Jingyi Zha
