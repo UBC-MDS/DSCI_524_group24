@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>ridge_remake.ridge_scatter – RidgeMake</title>
+<title>ridge_r2 – RidgeMake</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -156,7 +156,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#ridge_remake.ridge_remake.ridge_scatter" id="toc-ridge_remake.ridge_remake.ridge_scatter" class="nav-link active" data-scroll-target="#ridge_remake.ridge_remake.ridge_scatter">ridge_remake.ridge_scatter</a></li>
+  <li><a href="#ridge_remake.ridge_r2" id="toc-ridge_remake.ridge_r2" class="nav-link active" data-scroll-target="#ridge_remake.ridge_r2">ridge_r2</a>
+  <ul class="collapse">
+  <li><a href="#functions" id="toc-functions" class="nav-link" data-scroll-target="#functions">Functions</a>
+  <ul class="collapse">
+  <li><a href="#ridge_remake.ridge_r2.ridge_get_r2" id="toc-ridge_remake.ridge_r2.ridge_get_r2" class="nav-link" data-scroll-target="#ridge_remake.ridge_r2.ridge_get_r2">ridge_get_r2</a></li>
+  </ul></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -166,12 +172,103 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<section id="ridge_remake.ridge_remake.ridge_scatter" class="level1">
-<h1>ridge_remake.ridge_scatter</h1>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>ridge_remake.ridge_scatter()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Docstring for ridge_scatter</p>
+<section id="ridge_remake.ridge_r2" class="level1">
+<h1>ridge_r2</h1>
+<p><code>ridge_r2</code></p>
+<section id="functions" class="level2">
+<h2 class="anchored" data-anchor-id="functions">Functions</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="#ridge_remake.ridge_r2.ridge_get_r2">ridge_get_r2</a></td>
+<td>Calculate the coefficient of determination (R² score) for a regression model.</td>
+</tr>
+</tbody>
+</table>
+<section id="ridge_remake.ridge_r2.ridge_get_r2" class="level3">
+<h3 class="anchored" data-anchor-id="ridge_remake.ridge_r2.ridge_get_r2">ridge_get_r2</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>ridge_r2.ridge_get_r2(y_true, y_pred)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Calculate the coefficient of determination (R² score) for a regression model.</p>
+<p>The R² score measures how well the regression line fits the data, representing the proportion of variance in the dependent variable that is predictable from the independent variable(s). Values range from -∞ to 1, where 1 indicates perfect prediction.</p>
+<p>This function calcuates the ratio of the Residual Sum of Squares (RSS) to the Total Sum of Squares (TSS), as a measure of how well the data performs compared to the mean.</p>
+<section id="parameters" class="level4 doc-section doc-section-parameters">
+<h4 class="doc-section doc-section-parameters anchored" data-anchor-id="parameters">Parameters</h4>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 8%">
+<col style="width: 34%">
+<col style="width: 45%">
+<col style="width: 12%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>y_true</td>
+<td>array-like of shape (n_samples,)</td>
+<td>True target values (observed data points).</td>
+<td><em>required</em></td>
+</tr>
+<tr class="even">
+<td>y_pred</td>
+<td>array-like of shape (n_samples,)</td>
+<td>Predicted values from the regression model.</td>
+<td><em>required</em></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="returns" class="level4 doc-section doc-section-returns">
+<h4 class="doc-section doc-section-returns anchored" data-anchor-id="returns">Returns</h4>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 3%">
+<col style="width: 3%">
+<col style="width: 93%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>r2</td>
+<td>float</td>
+<td>The R² score. A value of 1.0 indicates perfect prediction, 0.0 indicates the model performs no better than predicting the mean, and negative values indicate the model performs worse than a horizontal line at the mean.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="notes" class="level4 doc-section doc-section-notes">
+<h4 class="doc-section doc-section-notes anchored" data-anchor-id="notes">Notes</h4>
+<p>R² is calculated as: R² = 1 - (SS_res / SS_tot) where: SS_res = Σ(y_true - y_pred)² (residual sum of squares) SS_tot = Σ(y_true - ȳ)² (total sum of squares)</p>
+</section>
+<section id="examples" class="level4 doc-section doc-section-examples">
+<h4 class="doc-section doc-section-examples anchored" data-anchor-id="examples">Examples</h4>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> y_true <span class="op">=</span> np.array([<span class="dv">3</span>, <span class="op">-</span><span class="fl">0.5</span>, <span class="dv">2</span>, <span class="dv">7</span>])</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> y_pred <span class="op">=</span> np.array([<span class="fl">2.5</span>, <span class="fl">0.0</span>, <span class="dv">2</span>, <span class="dv">8</span>])</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> ridge_get_r2(y_true, y_pred)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fl">0.9486081370449679</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 
+</section>
+</section>
+</section>
 </section>
 
 </main> <!-- /main -->

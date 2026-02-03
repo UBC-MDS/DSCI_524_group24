@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>ridge_remake.ridge_scatter – RidgeMake</title>
+<title>ridge_scatter_line – RidgeMake</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -156,7 +156,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#ridge_remake.ridge_remake.ridge_scatter" id="toc-ridge_remake.ridge_remake.ridge_scatter" class="nav-link active" data-scroll-target="#ridge_remake.ridge_remake.ridge_scatter">ridge_remake.ridge_scatter</a></li>
+  <li><a href="#ridge_remake.ridge_scatter_line" id="toc-ridge_remake.ridge_scatter_line" class="nav-link active" data-scroll-target="#ridge_remake.ridge_scatter_line">ridge_scatter_line</a>
+  <ul class="collapse">
+  <li><a href="#functions" id="toc-functions" class="nav-link" data-scroll-target="#functions">Functions</a>
+  <ul class="collapse">
+  <li><a href="#ridge_remake.ridge_scatter_line.ridge_scatter_line" id="toc-ridge_remake.ridge_scatter_line.ridge_scatter_line" class="nav-link" data-scroll-target="#ridge_remake.ridge_scatter_line.ridge_scatter_line">ridge_scatter_line</a></li>
+  </ul></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -166,12 +172,157 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<section id="ridge_remake.ridge_remake.ridge_scatter" class="level1">
-<h1>ridge_remake.ridge_scatter</h1>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>ridge_remake.ridge_scatter()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Docstring for ridge_scatter</p>
+<section id="ridge_remake.ridge_scatter_line" class="level1">
+<h1>ridge_scatter_line</h1>
+<p><code>ridge_scatter_line</code></p>
+<section id="functions" class="level2">
+<h2 class="anchored" data-anchor-id="functions">Functions</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="#ridge_remake.ridge_scatter_line.ridge_scatter_line">ridge_scatter_line</a></td>
+<td>Overlay a precomputed regression line on an existing scatter plot.</td>
+</tr>
+</tbody>
+</table>
+<section id="ridge_remake.ridge_scatter_line.ridge_scatter_line" class="level3">
+<h3 class="anchored" data-anchor-id="ridge_remake.ridge_scatter_line.ridge_scatter_line">ridge_scatter_line</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>ridge_scatter_line.ridge_scatter_line(</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    ax,</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    x,</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    y_line,</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="op">*</span>,</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    line_kwargs<span class="op">=</span><span class="va">None</span>,</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    label<span class="op">=</span><span class="va">None</span>,</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    sort_x<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Overlay a precomputed regression line on an existing scatter plot.</p>
+<p>This function does NOT fit a model. It takes the x-values used in the scatter plot and a matching set of precomputed y-values (for example, predictions returned by get_reg_line), then draws the line on the provided Matplotlib Axes.</p>
+<section id="parameters" class="level4 doc-section doc-section-parameters">
+<h4 class="doc-section doc-section-parameters anchored" data-anchor-id="parameters">Parameters</h4>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 6%">
+<col style="width: 16%">
+<col style="width: 70%">
+<col style="width: 5%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>ax</td>
+<td>matplotlib.axes.Axes</td>
+<td>The axes on which to draw the regression line. Typically the same axes returned by ridge_scatter().</td>
+<td><em>required</em></td>
+</tr>
+<tr class="even">
+<td>x</td>
+<td>array-like of shape (n_samples,)</td>
+<td>X-coordinates corresponding to the predictions in y_line.</td>
+<td><em>required</em></td>
+</tr>
+<tr class="odd">
+<td>y_line</td>
+<td>array-like of shape (n_samples,)</td>
+<td>Precomputed y-values to plot as a line (e.g., regression predictions). Must be the same length as x.</td>
+<td><em>required</em></td>
+</tr>
+<tr class="even">
+<td>line_kwargs</td>
+<td>dict</td>
+<td>Keyword arguments forwarded to Matplotlib’s plot() to style the line (e.g., {“linewidth”: 2, “linestyle”: “–”}). If None, defaults are used.</td>
+<td><code>None</code></td>
+</tr>
+<tr class="odd">
+<td>label</td>
+<td>str</td>
+<td>Legend label for the regression line.</td>
+<td><code>None</code></td>
+</tr>
+<tr class="even">
+<td>sort_x</td>
+<td>bool</td>
+<td>If True (default), sort points by x before plotting so the line does not zig-zag when x is not already ordered.</td>
+<td><code>True</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="returns" class="level4 doc-section doc-section-returns">
+<h4 class="doc-section doc-section-returns anchored" data-anchor-id="returns">Returns</h4>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 9%">
+<col style="width: 30%">
+<col style="width: 59%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>ax</td>
+<td>matplotlib.axes.Axes</td>
+<td>The same axes, with the regression line added.</td>
+</tr>
+<tr class="even">
+<td>line</td>
+<td>matplotlib.lines.Line2D</td>
+<td>The line artist created by Matplotlib.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="raises" class="level4 doc-section doc-section-raises">
+<h4 class="doc-section doc-section-raises anchored" data-anchor-id="raises">Raises</h4>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 4%">
+<col style="width: 6%">
+<col style="width: 89%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td></td>
+<td>TypeError</td>
+<td>If ax is not Axes-like, if line_kwargs is not a dict/None, if label is not a string/None, if sort_x is not boolean, or if inputs cannot be converted to numeric arrays.</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>ValueError</td>
+<td>If x or y_line are empty, or if they have different lengths.</td>
+</tr>
+</tbody>
+</table>
 
 
+</section>
+</section>
+</section>
 </section>
 
 </main> <!-- /main -->

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>ridge_remake.ridge_scatter – RidgeMake</title>
+<title>get_reg_line – RidgeMake</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -156,7 +156,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#ridge_remake.ridge_remake.ridge_scatter" id="toc-ridge_remake.ridge_remake.ridge_scatter" class="nav-link active" data-scroll-target="#ridge_remake.ridge_remake.ridge_scatter">ridge_remake.ridge_scatter</a></li>
+  <li><a href="#ridge_remake.get_reg_line" id="toc-ridge_remake.get_reg_line" class="nav-link active" data-scroll-target="#ridge_remake.get_reg_line">get_reg_line</a>
+  <ul class="collapse">
+  <li><a href="#functions" id="toc-functions" class="nav-link" data-scroll-target="#functions">Functions</a>
+  <ul class="collapse">
+  <li><a href="#ridge_remake.get_reg_line.get_reg_line" id="toc-ridge_remake.get_reg_line.get_reg_line" class="nav-link" data-scroll-target="#ridge_remake.get_reg_line.get_reg_line">get_reg_line</a></li>
+  </ul></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -166,12 +172,90 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<section id="ridge_remake.ridge_remake.ridge_scatter" class="level1">
-<h1>ridge_remake.ridge_scatter</h1>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>ridge_remake.ridge_scatter()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Docstring for ridge_scatter</p>
+<section id="ridge_remake.get_reg_line" class="level1">
+<h1>get_reg_line</h1>
+<p><code>get_reg_line</code></p>
+<section id="functions" class="level2">
+<h2 class="anchored" data-anchor-id="functions">Functions</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="#ridge_remake.get_reg_line.get_reg_line">get_reg_line</a></td>
+<td>Compute linear regression predictions for the provided training data.</td>
+</tr>
+</tbody>
+</table>
+<section id="ridge_remake.get_reg_line.get_reg_line" class="level3">
+<h3 class="anchored" data-anchor-id="ridge_remake.get_reg_line.get_reg_line">get_reg_line</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>get_reg_line.get_reg_line(X_train, y_train)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Compute linear regression predictions for the provided training data.</p>
+<section id="parameters" class="level4 doc-section doc-section-parameters">
+<h4 class="doc-section doc-section-parameters anchored" data-anchor-id="parameters">Parameters</h4>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 6%">
+<col style="width: 57%">
+<col style="width: 26%">
+<col style="width: 9%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>X_train</td>
+<td>array-like or pd.DataFrame of shape (n_samples, n_features)</td>
+<td>The training input samples.</td>
+<td><em>required</em></td>
+</tr>
+<tr class="even">
+<td>y_train</td>
+<td>array-like or pd.DataFrame of shape (n_samples,) or (n_samples, n_targets)</td>
+<td>The target values (real numbers).</td>
+<td><em>required</em></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="returns" class="level4 doc-section doc-section-returns">
+<h4 class="doc-section doc-section-returns anchored" data-anchor-id="returns">Returns</h4>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 6%">
+<col style="width: 43%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>y_pred</td>
+<td>ndarray of shape (n_samples,) or (n_samples, n_targets)</td>
+<td>The predicted values calculated from the linear least-squares fit</td>
+</tr>
+</tbody>
+</table>
 
 
+</section>
+</section>
+</section>
 </section>
 
 </main> <!-- /main -->

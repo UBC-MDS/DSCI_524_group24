@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>ridge_remake.ridge_scatter – RidgeMake</title>
+<title>ridge_scatter – RidgeMake</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -156,7 +156,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#ridge_remake.ridge_remake.ridge_scatter" id="toc-ridge_remake.ridge_remake.ridge_scatter" class="nav-link active" data-scroll-target="#ridge_remake.ridge_remake.ridge_scatter">ridge_remake.ridge_scatter</a></li>
+  <li><a href="#ridge_remake.ridge_scatter" id="toc-ridge_remake.ridge_scatter" class="nav-link active" data-scroll-target="#ridge_remake.ridge_scatter">ridge_scatter</a>
+  <ul class="collapse">
+  <li><a href="#functions" id="toc-functions" class="nav-link" data-scroll-target="#functions">Functions</a>
+  <ul class="collapse">
+  <li><a href="#ridge_remake.ridge_scatter.ridge_scatter" id="toc-ridge_remake.ridge_scatter.ridge_scatter" class="nav-link" data-scroll-target="#ridge_remake.ridge_scatter.ridge_scatter">ridge_scatter</a></li>
+  </ul></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -166,12 +172,118 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<section id="ridge_remake.ridge_remake.ridge_scatter" class="level1">
-<h1>ridge_remake.ridge_scatter</h1>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>ridge_remake.ridge_scatter()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Docstring for ridge_scatter</p>
+<section id="ridge_remake.ridge_scatter" class="level1">
+<h1>ridge_scatter</h1>
+<p><code>ridge_scatter</code></p>
+<section id="functions" class="level2">
+<h2 class="anchored" data-anchor-id="functions">Functions</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="#ridge_remake.ridge_scatter.ridge_scatter">ridge_scatter</a></td>
+<td>Create a scatter plot on a provided Matplotlib Axes object.</td>
+</tr>
+</tbody>
+</table>
+<section id="ridge_remake.ridge_scatter.ridge_scatter" class="level3">
+<h3 class="anchored" data-anchor-id="ridge_remake.ridge_scatter.ridge_scatter">ridge_scatter</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>ridge_scatter.ridge_scatter(ax, x, y, <span class="op">*</span>, scatter_kwargs<span class="op">=</span><span class="va">None</span>, label<span class="op">=</span><span class="va">None</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Create a scatter plot on a provided Matplotlib Axes object.</p>
+<p>This function is the base plotting function for the ridge regression visualization workflow. It draws the raw data points (x, y) on the provided Axes. A separate function, <code>ridge_scatter_line()</code>, can then be called to overlay a precomputed regression line on the same Axes.</p>
+<section id="parameters" class="level4 doc-section doc-section-parameters">
+<h4 class="doc-section doc-section-parameters anchored" data-anchor-id="parameters">Parameters</h4>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 7%">
+<col style="width: 15%">
+<col style="width: 70%">
+<col style="width: 5%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>ax</td>
+<td>matplotlib.axes.Axes</td>
+<td>The axes on which to draw the scatter plot.</td>
+<td><em>required</em></td>
+</tr>
+<tr class="even">
+<td>x</td>
+<td>array-like of shape (n_samples,)</td>
+<td>X-coordinates of the data points.</td>
+<td><em>required</em></td>
+</tr>
+<tr class="odd">
+<td>y</td>
+<td>array-like of shape (n_samples,)</td>
+<td>Y-coordinates of the data points. Must be the same length as x.</td>
+<td><em>required</em></td>
+</tr>
+<tr class="even">
+<td>scatter_kwargs</td>
+<td>dict</td>
+<td>Keyword arguments forwarded to Matplotlib’s scatter() to style the points (e.g., {“s”: 25, “alpha”: 0.8, “marker”: “o”}). If None, defaults are used.</td>
+<td><code>None</code></td>
+</tr>
+<tr class="odd">
+<td>label</td>
+<td>str</td>
+<td>Legend label for the scatter points.</td>
+<td><code>None</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="returns" class="level4 doc-section doc-section-returns">
+<h4 class="doc-section doc-section-returns anchored" data-anchor-id="returns">Returns</h4>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 8%">
+<col style="width: 41%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>ax</td>
+<td>matplotlib.axes.Axes</td>
+<td>The same axes, with the scatter points added.</td>
+</tr>
+<tr class="even">
+<td>points</td>
+<td>matplotlib.collections.PathCollection</td>
+<td>The scatter artist created by Matplotlib.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="notes" class="level4 doc-section doc-section-notes">
+<h4 class="doc-section doc-section-notes anchored" data-anchor-id="notes">Notes</h4>
+<p>This function only creates the scatter plot and does not compute or overlay any fitted line. To overlay a precomputed line after plotting points, call <code>ridge_scatter_line(ax, x_line, y_line, ...)</code>.</p>
 
 
+</section>
+</section>
+</section>
 </section>
 
 </main> <!-- /main -->
