@@ -121,8 +121,11 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#changelog" id="toc-changelog" class="nav-link active" data-scroll-target="#changelog">Changelog</a>
   <ul class="collapse">
-  <li><a href="#unreleased" id="toc-unreleased" class="nav-link" data-scroll-target="#unreleased">[Unreleased]</a></li>
-  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section">[0.1.0] - (1979-01-01)</a></li>
+  <li><a href="#milestone1" id="toc-milestone1" class="nav-link" data-scroll-target="#milestone1">[0.1.0] - milestone1</a></li>
+  <li><a href="#milestone2" id="toc-milestone2" class="nav-link" data-scroll-target="#milestone2">[0.2.0] - milestone2</a></li>
+  <li><a href="#milestone3" id="toc-milestone3" class="nav-link" data-scroll-target="#milestone3">[0.3.0] - milestone3</a></li>
+  <li><a href="#milestone4" id="toc-milestone4" class="nav-link" data-scroll-target="#milestone4">[0.4.0] - milestone4</a></li>
+  <li><a href="#milestone-summary-issue-review-project-management-and-licensing" id="toc-milestone-summary-issue-review-project-management-and-licensing" class="nav-link" data-scroll-target="#milestone-summary-issue-review-project-management-and-licensing">Milestone summary – issue review, project management, and licensing</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -137,16 +140,50 @@ ul.task-list li input[type="checkbox"] {
 <h1>Changelog</h1>
 <p>All notable changes to this project will be documented in this file.</p>
 <p>The format is based on <a href="https://keepachangelog.com/en/1.0.0/">Keep a Changelog</a>, and this project adheres to <a href="https://semver.org/spec/v2.0.0.html">Semantic Versioning</a>.</p>
-<section id="unreleased" class="level2">
-<h2 class="anchored" data-anchor-id="unreleased">[Unreleased]</h2>
+<section id="milestone1" class="level2">
+<h2 class="anchored" data-anchor-id="milestone1">[0.1.0] - milestone1</h2>
+<p>For this milestone, our team established the foundational structure and collaboration practices for the RidgeMake package.</p>
+<p>We drafted a team work contract to define expectations, accountability, and communication norms within the team. The contract is kept private as required by the course guidelines.</p>
+<p>We collaboratively selected the project topic and created the public project repository under the UBC-MDS GitHub organization using the minimal Python package template with the MIT license.</p>
+<p>We added a project overview and planned functionality to this README, including a high-level description of the package, a list of proposed functions, and a description of how the package fits within the broader Python ecosystem.</p>
+<p>We also added and customized a Code of Conduct and defined our collaboration workflow and contribution strategy in the CONTRIBUTING.md file.</p>
+</section>
+<section id="milestone2" class="level2">
+<h2 class="anchored" data-anchor-id="milestone2">[0.2.0] - milestone2</h2>
 <ul>
-<li>Upcoming features and fixes</li>
+<li>function ridge_r2 implementation and test by <span class="citation" data-cites="eddeness">@eddeness</span> in https://github.com/UBC-MDS/DSCI_524_group24/pull/21</li>
+<li>Add ridge_scatter implementation and unit tests by <span class="citation" data-cites="elsereneee">@elsereneee</span> in https://github.com/UBC-MDS/DSCI_524_group24/pull/22</li>
+<li>Added revised docstring for get_reg_line() by <span class="citation" data-cites="suryashch">@suryashch</span> in https://github.com/UBC-MDS/DSCI_524_group24/pull/23</li>
+<li>created file environment.yml by <span class="citation" data-cites="suryashch">@suryashch</span> in https://github.com/UBC-MDS/DSCI_524_group24/pull/27</li>
+<li>add prompt for tests by <span class="citation" data-cites="elsereneee">@elsereneee</span> in https://github.com/UBC-MDS/DSCI_524_group24/pull/28</li>
+<li>created tests for get_reg_line() by <span class="citation" data-cites="suryashch">@suryashch</span> in https://github.com/UBC-MDS/DSCI_524_group24/pull/29</li>
+<li>M2 yuexiang function/test by <span class="citation" data-cites="lukeni777">@lukeni777</span> in https://github.com/UBC-MDS/DSCI_524_group24/pull/30</li>
+<li>Full Changelog**: https://github.com/UBC-MDS/DSCI_524_group24/compare/0.0.1…0.0.2</li>
 </ul>
 </section>
-<section id="section" class="level2">
-<h2 class="anchored" data-anchor-id="section">[0.1.0] - (1979-01-01)</h2>
+<section id="milestone3" class="level2">
+<h2 class="anchored" data-anchor-id="milestone3">[0.3.0] - milestone3</h2>
 <ul>
-<li>First release</li>
+<li><p>We configured a GitHub Actions continuous integration (CI) workflow to automatically run the test suite and style checks on every push and pull request to the main branch.</p></li>
+<li><p>We also configured a continuous deployment (CD) workflow that runs the same checks and publishes the package to TestPyPI on every push to the main branch. A successful deployment is indicated by the release badge on the repository README.</p></li>
+<li><p>Finally, we added more unit tests to improve test coverage and to validate the continuous integration and deployment workflows through pull requests.</p></li>
+</ul>
+</section>
+<section id="milestone4" class="level2">
+<h2 class="anchored" data-anchor-id="milestone4">[0.4.0] - milestone4</h2>
+</section>
+<section id="milestone-summary-issue-review-project-management-and-licensing" class="level2">
+<h2 class="anchored" data-anchor-id="milestone-summary-issue-review-project-management-and-licensing">Milestone summary – issue review, project management, and licensing</h2>
+<ul>
+<li><p>We reviewed all peer review and TA feedback and addressed at least one required fix per team member.</p>
+<ul>
+<li>YUE Xiang Ni: issue 2, 3 on <a href="https://github.com/UBC-MDS/DSCI_524_group24/issues/60">issue #60</a></li>
+<li>Suryash Chakravarty: issue 1, 2, 3 on <a href="https://github.com/UBC-MDS/DSCI_524_group24/issues/63">issue #63</a></li>
+<li>Seungmyun Park: issue 4, 5 on <a href="https://github.com/UBC-MDS/DSCI_524_group24/issues/60">issue #60</a></li>
+<li>Jingyi Zha: issue 2, 3 on <a href="https://github.com/UBC-MDS/DSCI_524_group24/issues/61">issue #60</a></li>
+</ul></li>
+<li><p>We created multiple views in the GitHub project board to track team-level and individual-level progress and performance, enabling clearer monitoring of task ownership and workflow status.</p></li>
+<li><p>Finally, we reviewed the project license and discussed its suitability by opening a dedicated GitHub issue. The issue documents our rationale for choosing the current license and serves as a formal record of the team’s licensing decision.</p></li>
 </ul>
 
 
